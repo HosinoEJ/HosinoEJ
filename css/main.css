@@ -1,0 +1,71 @@
+* {
+    margin: 0 0;/*删除边框*/
+}
+body{
+    height: 100vh;
+    background-color: #cce7ff;/*全网站背景色*/
+    font-weight: bold;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.main{
+    width: 90%;
+    height: 90%;
+}
+
+
+/*调用毛玻璃div  （class="DivStyle-Glass"）*/
+.DivStyle-Glass{
+    backdrop-filter: blur(5px); /*毛玻璃效果*/
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+}
+
+
+
+/*====================控件样式================================*/
+/*按钮样式   (<a href="#" class="button1")*/
+.button{
+    border: 2px solid black;
+    padding: 10px 10px;
+    border-radius: 20px;
+    color: black;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+    transition: 0.5s;
+}
+.button:hover{
+    background-color: #0b26364d;
+}
+
+/*按钮样式1   (<a href="#" class="button1")*/
+.button1{
+    border: 2px solid #0b2636;
+    background-color: #0b2636;
+    padding: 10px 10px;
+    border-radius: 20px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+    transition: 0.5s;
+}
+.button1:hover{
+    background-color: #0a476a;
+}
+
+
+
+
+
+/*链接文本1   (<a href="#" class="LinkText1")*/
+.LinkText1{
+    text-decoration: none;
+    color: black;
+}

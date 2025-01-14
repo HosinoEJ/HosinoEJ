@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript Typing Effect</title>
+<style>
+#typedtext-output {
+  display: inline-block; /* 讓光標可以正確定位 */
+}
+
+.cursor {
+  display: inline-block;
+  width: 8px; /* 光標寬度，可調整 */
+  margin-left: 2px; /* 光標與文字的間距 */
+  text-align: center;
+    font-size: 1.2em; /* 調整光標大小 */
+  animation: blink 1s infinite step-end; /* 閃爍動畫 */
+}
+
+.cursor::before{
+    content:"_";
+}
+
+@keyframes blink {
+  from, to {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+</style>
+</head>
+<body>
+
+<div id="typedtext">這是一段<strong>包含 HTML 標籤</strong>的文字。<a href="#">連結</a>。</div>
+<div id="typedtext-output"></div>
+
+<script>
+const typedtextElement = document.getElementById("typedtext");
+const typedtextOutputElement = document.getElementById("typedtext-output");
+let charIndex = 0;
+let text = typedtextElement.innerHTML;
+
+typedtextElement.style.display = "none";
+
+function typeText() {
+    if (charIndex < text.length) {
+        typedtextOutputElement.innerHTML = text.substring(0, charIndex + 1) + '<span class="cursor"></span>'; // 加入光標
+        charIndex++;
+        setTimeout(typeText, 50);
+    } else {
+        // 打字完成後移除光標
+        if(typedtextOutputElement.querySelector('.cursor')){
+            typedtextOutputElement.querySelector('.cursor').remove();
+        }
+    }
+}
+
+typeText();
+
+</script>
+
+</body>
+</html>
