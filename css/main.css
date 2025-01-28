@@ -2,7 +2,6 @@
     margin: 0 0;/*删除边框*/
 }
 body{
-    height: 100vh;
     background-color: #cce7ff;/*全网站背景色*/
     font-weight: bold;
 

@@ -13,14 +13,14 @@ function updateText() {
   
     if (today.getMonth() === targetMonth && today.getDate() === targetDay) {
       const coloredGTEJR = `
-        <span class="colored-g">G</span>
-        <span class="colored-t">T</span>
-        <span class="colored-e">E</span>
-        <span class="colored-j">J</span>
-        <span class="colored-r">R</span>
+        <span class="colored-g">H</span>
+        <span class="colored-t">S</span>
+        <span class="colored-e">N</span>
+        <span class="colored-j">E</span>
+        <span class="colored-r">J</span>
       `;
       const originalText = document.getElementById("IndexTitle").textContent;
-      const newText = originalText.replace("GTEJR", coloredGTEJR);
+      const newText = originalText.replace("HSNEJ", coloredGTEJR);
       document.getElementById("IndexTitle").innerHTML = newText;
     }
   }
