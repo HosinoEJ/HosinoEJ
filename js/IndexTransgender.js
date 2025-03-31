@@ -6,8 +6,8 @@ Index中的标题中的“GTEJR”五个字母会变成跨性别旗的五个颜�
 
 
 function updateText() {
-    const targetMonth = 10; // JavaScript 的月份从 0 开始，0 代表一月
-    const targetDay = 20;
+    const targetMonth = 2; // JavaScript 的月份从 0 开始，0 代表一月
+    const targetDay = 31;
   
     const today = new Date();
   
