@@ -36,11 +36,9 @@
 
 
 /*国际跨性别现身日彩蛋对应的颜色，配合/js/IndexTransgender.js食用*/
-.colored-g { color: #5bcffa; }
-.colored-t { color: #f5abb9; }
-.colored-e { color: white; }
-.colored-j { color: #f5abb9; }
-.colored-r { color: #5bcffa; }
+#c-g { color: #5bcffa; }
+#c-t { color: #f5abb9; }
+#c-e { color: white; }
 
 
 

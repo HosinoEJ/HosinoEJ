@@ -13,11 +13,11 @@ function updateText() {
   
     if (today.getMonth() === targetMonth && today.getDate() === targetDay) {
       const coloredGTEJR = `
-        <span class="colored-g">H</span>
-        <span class="colored-t">S</span>
-        <span class="colored-e">N</span>
-        <span class="colored-j">E</span>
-        <span class="colored-r">J</span>
+        <t id="c-g">H</t>
+        <t id="c-t">S</t>
+        <t id="c-e">N</t>
+        <t id="c-t">E</t>
+        <t id="c-g">J</t>
       `;
       const originalText = document.getElementById("IndexTitle").textContent;
       const newText = originalText.replace("HSNEJ", coloredGTEJR);
