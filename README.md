@@ -2,7 +2,7 @@
 - 👀 I’m interested in ...
 - 🌱 I’m currently learning ...
 - 💞️ I’m looking to collaborate on ...　
-- 📫 How to reach me ... Email:hosinoeiji@gmail.com
+- 📫 How to reach me ... Email:
 - 😄 Pronouns: ... 星野栄治
 - ⚡ Fun fact: ... なし
 
