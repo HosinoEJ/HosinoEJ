@@ -1,31 +1,23 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>GotouEijiro|Website</title>
-        <link rel="stylesheet" href="css/index.css"/><!--主页特有（喜-->
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="css/main.css"/><!--全网站统一标准-->
-        <link rel="stylesheet" href="css/IndexTitleCursor.css"/><!--设置主页标题动画的光标，其他地方也可以调用-->
-        <link rel="icon" href="
-https://yt3.ggpht.com/Rn9wjWcDaCik0d1oBE55MSUa8Umq2LVZKm4m-y1fNkgOY8w54
-swf1DPWhAXNFwSwV6g0ANQ-GA=s600-c-k-c0x00ffffff-no-rj-rp-mo"/><!--图标-->
+    <head class="head"><!--頭部信息通過template實現自動填充，保證每個頁面都是一樣的元數據。請前往./template.html查看元數據設置-->
+        <script src="/js/bg_setting.js"></script><!--設置背景顏色-->
     </head>
     <body>
-        <div class="main"><!--Main主要-->
-            <div class="title"><!--Title-->
-                <img class="indexIcon" width="100px" style="border-radius: 50%; margin: 0 25px;" src="
-https://yt3.ggpht.com/Rn9wjWcDaCik0d1oBE55MSUa8Umq2LVZKm4m-y1fNkgOY8w5
-4swf1DPWhAXNFwSwV6g0ANQ-GA=s600-c-k-c0x00ffffff-no-rj-rp-mo"/><!--title_icon是标题图标-->
-                <div id="IndexTitle" style="opacity: 0;">Welcome The Channel of GTEJR Website</div>
-                <div id="outPut"></div>
-            </div>
-            
-            <div class="indexButton"><!--indexButton是主页按钮-->
-                <a href="https://youtube.com/@GTEJR" class="button1">YouTube Channel</a>
-                <a href="#" class="button">敬请期待</a>
-            </div>
-        </div>
+        
 
+        
+
+
+
+
+
+        <!--以下是背景顏色個人化設置（調用的template.html）-->
+        <div class="bg_setting"></div>
+
+
+
+        
         <script src="js/template.js"></script><!--模版清单！很重要的一个词条库-->
         <script src="js/IndexTransgender.js"></script><!--Index页面上的彩蛋——國際跨性別現身日时会将标题中的GTEJR变成跨性别旗-->
         <script src="js/IndexTitleCursor.js"></script><!--主页动画-->

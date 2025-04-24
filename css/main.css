@@ -1,18 +1,15 @@
-* {
+* {/*全局設定*/
     margin: 0 0;/*删除边框*/
-    font-family: fangsong;
+    font-family: 'Microsoft YaHei';
 }
 body{
-    background-color: #cce7ff;/*全网站背景色*/
+
     font-weight: bold;
 
     display: flex;
     justify-content: center;
     align-items: center;
-    
 }
-
-
 
 /*调用毛玻璃div  （class="DivStyle-Glass"）*/
 .DivStyle-Glass{
@@ -58,11 +55,27 @@ body{
 }
 
 
-
-
-
 /*链接文本1   (<a href="#" class="LinkText1")*/
 .LinkText1{
     text-decoration: none;
     color: black;
+}
+
+
+
+
+
+
+/* 当长宽比小于1:1时，使用另一种排版 */
+@media (max-aspect-ratio: 1/1){
+    
+}
+
+
+
+/*動畫部分*/
+/*================================================*/
+@keyframes toggleSettings{/*個人化按鈕動畫*/
+    0%{bottom: -100px;}
+    100%{bottom: 20px;}
 }

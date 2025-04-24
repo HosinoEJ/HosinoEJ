@@ -21,8 +21,48 @@
 
 -->
 
+<template id="head"><!--設置全部頁面元數據-->
+    <meta charset="UTF-8">
+    <title>HosinoEJ | Website</title>
+    <link rel="stylesheet" href="css/main.css"/><!--全网站统一标准-->
+    <link rel="stylesheet" href="css/IndexTitleCursor.css"/><!--设置主页标题动画的光标，其他地方也可以调用-->
+    <link rel="stylesheet" href="css/bg_setting.css"/><!--背景顏色設置-->
+    <link rel="icon" href="image/TX.ico"/><!--图标-->
+</template>
 
-<!--这是blig的had模板-->
+<template id="bg_setting"><!--網頁背景個人化代碼-->
+    <button id="toggleSettings">⚙️</button><!--背景颜色设置按钮-->
+        <div id="settingsPanel"><!--設置背景顏色-->
+            <label for="bgColorPicker">選擇背景顏色</label>
+            <div class="flat-color" id="display-color"><!--調色盤按鈕，這一行是美化，下一行是主體。主體不透明度0-->
+                <input type="color" id="bgColorPicker" style="width: 100%; height: 100%; opacity: 0;"/>
+            </div>
+
+              <div style="margin-top: 1rem;"><!--手動輸入16進制顔色代碼-->
+                <label for="hexInput">手動輸入顏色代碼</label><br>
+                <input type="text" id="hexInput" placeholder="#cce7ff" maxlength="7" style="height: 25px;"/><br>
+              </div>
+        
+            <div class="color-options"><!--預設-->
+              <div class="color-button" style="background-color: #cce7ff;" data-color="#cce7ff"></div>
+              <div class="color-button" style="background-color: #ffe6e6;" data-color="#ffe6e6"></div>
+              <div class="color-button" style="background-color: #e6ffe6;" data-color="#e6ffe6"></div>
+              <div class="color-button" style="background-color: #f5e6ff;" data-color="#f5e6ff"></div>
+              <div class="color-button" style="background-color: #fff3cc;" data-color="#fff3cc"></div>
+            </div>
+          </div>
+</template>
+
+
+
+
+
+<template id="main_2"><!--副標題設置，可修改-->
+    お互いに尊重しよう
+</template>
+
+
+<!--这是blig的had模板--><!--待修改-->
 <template id="blig_had">
     <a id="button1" href="index.html">回到主页</a>
     <a id="button" href="blog.html">社团博客</a>
@@ -34,18 +74,3 @@
 
 
 
-<div> <!--index.html-->
-
-    <template id="TP_LittleTitle"><!--副标题-->
-        无论过去多久，这个网站谨记一群有意思的人
-    </template>
-
-    <template id="TP_introduce"><!--社团介绍-->
-        故事由一群懵懂无知但爱好动漫的高中生书写，纯粹的热爱使得这个社团更加的天真烂漫。
-        不希望这段年少时的纯真在时间的流逝中枯竭，以至于在未来俯瞰时会嘲笑当初的自己。
-    </template>
-
-    <template id="TP_Idea"><!--想说的话-->
-        暂时不会翘首期盼夏天到来了吧，停留在手尖的温柔触感，连带着仲夏的记忆，都将和我一起一直下去
-    </template>
-</div>

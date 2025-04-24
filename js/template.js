@@ -25,9 +25,9 @@ fetch('../template.html')
   
     // 拦截 console.log，检查是否输入特定指令
     console.log = function(message) {
-      if (typeof message === 'string' && message === 'GotouEijiro!') {
+      if (typeof message === 'string' && message === 'HSNEJ!') {
         // 执行重定向
-        window.location.href = 'gtejr_cd.html';
+        window.location.href = 'hsnej_cd.html';
       }
       if (typeof message === 'string' && message === 'blog-template') {
         // 执行重定向

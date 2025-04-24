@@ -1,33 +1,65 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>GotouEijiro|Website</title>
+    <head class="head"><!--頭部信息通過template實現自動填充，保證每個頁面都是一樣的元數據。請前往./template.html查看元數據設置-->
         <link rel="stylesheet" href="css/index.css"/><!--主页特有（喜-->
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="css/main.css"/><!--全网站统一标准-->
-        <link rel="stylesheet" href="css/IndexTitleCursor.css"/><!--设置主页标题动画的光标，其他地方也可以调用-->
-        <link rel="icon" href="image/TX.ico"/><!--图标-->
     </head>
     <body>
         <div class="main"><!--Main主要-->
             <div class="title"><!--Title-->
                 <img class="indexIcon" width="100px" style="border-radius: 50%; margin: 0 25px;" src="image/TX.ico"/><!--title_icon是标题图标-->
-                <div id="IndexTitle" style="opacity: 0;">Welcome The Channel of HSNEJ Website</div>
-                <div id="outPut"></div>
+                <div id="IndexTitle" style="opacity: 0;">Welcome The Channel of HSNEJ Website</div><!--這裏本質上是看不見的，實際上爲了動畫，這些文字在下一行的id="output"顯示-->
+                <div id="outPut"></div><!--標題顯示-->
             </div>
 
-            <div class="main_2"><!--副标题-->
-                すべての生命は尊敬しなければなりません！誰でも
-            </div>
+            <div class="main_2"></div><!--副标题,修改請前往template.html-->
+            
+
+
             
             <div class="indexButton"><!--indexButton是主页按钮-->
                 <a href="https://youtube.com/@HosinoEJ" class="button1">YouTube Channel</a>
-                <a href="#" class="button">お待ちください</a>
+                <a href="#" class="button">自己紹介</a>
+            </div>
+            <div id="link_elseWeb">
+                <a href="https://youtube.com/@HosinoEJ" class="LinkText1">YouTube</a>
+                |
+                <a href="https://github.com/HosinoEJ" class="LinkText1">GitHub</a>
             </div>
         </div>
 
+        
+
+
+        <!--以下是背景顏色個人化設置-->
+        <!--===========================================================-->
+        <button id="toggleSettings" style="animation: IndextoggleSettings 2s forwards;">⚙️</button><!--背景颜色设置按钮 其中因爲主頁動畫原因，他的動畫是單獨的，在index.css裏-->
+        <div id="settingsPanel"><!--設置背景顏色-->
+            <label for="bgColorPicker">選擇背景顏色</label>
+            <div class="flat-color" id="display-color"><!--調色盤按鈕，這一行是美化，下一行是主體。主體不透明度0-->
+                <input type="color" id="bgColorPicker" style="width: 100%; height: 100%; opacity: 0;"/>
+            </div>
+
+              <div style="margin-top: 1rem;"><!--手動輸入16進制顔色代碼-->
+                <label for="hexInput">手動輸入顏色代碼</label><br>
+                <input type="text" id="hexInput" placeholder="#cce7ff" maxlength="7" style="height: 25px;"/><br>
+              </div>
+        
+            <div class="color-options"><!--預設-->
+              <div class="color-button" style="background-color: #cce7ff;" data-color="#cce7ff"></div>
+              <div class="color-button" style="background-color: #ffe6e6;" data-color="#ffe6e6"></div>
+              <div class="color-button" style="background-color: #e6ffe6;" data-color="#e6ffe6"></div>
+              <div class="color-button" style="background-color: #f5e6ff;" data-color="#f5e6ff"></div>
+              <div class="color-button" style="background-color: #fff3cc;" data-color="#fff3cc"></div>
+            </div>
+          </div>
+          <!--===========================================================-->
+
+
+
+        
         <script src="js/template.js"></script><!--模版清单！很重要的一个词条库-->
         <script src="js/IndexTransgender.js"></script><!--Index页面上的彩蛋——國際跨性別現身日时会将标题中的GTEJR变成跨性别旗-->
         <script src="js/IndexTitleCursor.js"></script><!--主页动画-->
+        <script src="/js/bg_setting.js"></script><!--設置背景顏色-->
     </body>
 </html>

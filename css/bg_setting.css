@@ -1,0 +1,101 @@
+/*這個是背景顏色個人化按鈕控件的所有css代碼，為main.css的附錄1*/
+body{
+    transition: background-color 0.3s ease;
+}
+
+
+
+  .flat-color {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    border: 2px solid #ccc;
+    background-color: #cce7ff;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  .flat-color:hover {
+    border-color: #666;
+  }
+
+
+
+
+
+  /* 齒輪按鈕樣式 */
+  #toggleSettings {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #0077cc;
+    color: white;
+    font-size: 24px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    z-index: 1000;
+    animation: toggleSettings 0.3s forwards;/*主頁按鈕不調用這個animation*/
+  }
+  #toggleSettings:hover {
+    background-color: #005fa3;
+  }
+  
+
+  /* 設定面板 */
+  #settingsPanel {
+    position: fixed;
+    top: 80px;
+    right: 50px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    padding: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+  }
+  #settingsPanel.show {
+    animation: fadeIn 0.4s forwards;
+    pointer-events: auto;
+  }
+  #settingsPanel.fadeout {
+    animation: fadeOut 0.3s forwards;
+    pointer-events: none;
+  }
+
+
+/*面板淡入淡出動畫*/
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
+
+  
+
+  .color-options {
+    margin-top: 1rem;
+  }
+
+  .color-button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    margin-right: 10px;
+    cursor: pointer;
+    display: inline-block;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .color-button:hover {
+    outline: 2px solid #000;
+  }
