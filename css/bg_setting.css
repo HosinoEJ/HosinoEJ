@@ -38,9 +38,14 @@ body{
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
     z-index: 1000;
     animation: toggleSettings 0.3s forwards;/*主頁按鈕不調用這個animation*/
+    transition: transform 0.5s ease; /* 旋转持续时间：0.5秒，过渡效果：ease */
   }
   #toggleSettings:hover {
     background-color: #005fa3;
+    transform: rotate(90deg); /* 悬停时旋转角度：90度 */
+  }
+  #toggleSettings:active {
+    transform: scale(0.9);
   }
   
 

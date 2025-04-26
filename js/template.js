@@ -1,40 +1,35 @@
+// 加载模板
 fetch('../template.html')
   .then(response => response.text())
   .then(data => {
     const tempDiv = document.createElement('div');
     tempDiv.innerHTML = data;
 
-    // 缓存所有模板内容
+    // 缓存所有模板内容（原始内容，不clone）
     const templates = new Map();
     tempDiv.querySelectorAll('template').forEach(template => {
-      templates.set(template.id, template.content.cloneNode(true));
+      templates.set(template.id, template.content);  // 不 clone
     });
 
     // 遍历页面中的元素并插入对应的模板
     templates.forEach((content, id) => {
-      document.querySelectorAll(`.${id}`).forEach(el => 
-        el.appendChild(content.cloneNode(true))  // 克隆缓存的内容
-      );
+      document.querySelectorAll(`.${id}`).forEach(el => {
+        if (el.children.length === 0) {  // 防止重复插入
+          el.appendChild(content.cloneNode(true));  // 这里再 clone
+        }
+      });
     });
   });
 
 
-  //这是一个彩蛋，有时可以当做一个“指令集”
-  (function() {
-    const originalLog = console.log;
-  
-    // 拦截 console.log，检查是否输入特定指令
-    console.log = function(message) {
-      if (typeof message === 'string' && message === 'HSNEJ!') {
-        // 执行重定向
-        window.location.href = 'hsnej_cd.html';
-      }
-      if (typeof message === 'string' && message === 'blog-template') {
-        // 执行重定向
-        window.location.href = 'blig_template.html';
-      }
-      // 调用原始的 console.log 确保正常日志输出
-      originalLog.apply(console, arguments);
-    };
-  })();
-  
+(function () {
+  const originalLog = console.log;
+  window.hsnej = function () {window.location.href = 'hsnej_cd.html';};
+  window.info = function () {alert("星野栄治 © 2025｜GNU LICENSEによって転載してください");
+  };
+  console.log = function (message) { originalLog.apply(console, arguments);
+  };
+
+})(
+
+);
