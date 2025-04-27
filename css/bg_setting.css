@@ -24,6 +24,10 @@ body{
 
   /* 齒輪按鈕樣式 */
   #toggleSettings {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -37,16 +41,25 @@ body{
     cursor: pointer;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
     z-index: 1000;
+    line-height: 50px; /* 设置和按钮一样高 */
+
     animation: toggleSettings 0.3s forwards;/*主頁按鈕不調用這個animation*/
-    transition: transform 0.5s ease; /* 旋转持续时间：0.5秒，过渡效果：ease */
+    transition: transform 0.5s ease,background-color 0.3s; /* 旋转持续时间：0.5秒，过渡效果：ease */
   }
   #toggleSettings:hover {
     background-color: #005fa3;
-    transform: rotate(90deg); /* 悬停时旋转角度：90度 */
   }
   #toggleSettings:active {
     transform: scale(0.9);
   }
+  #gearIcon {
+    transition: transform 0.5s ease;
+  }
+  
+  #toggleSettings:hover #gearIcon {
+    transform: rotate(90deg);
+  }
+  
   
 
   /* 設定面板 */
@@ -99,8 +112,13 @@ body{
     cursor: pointer;
     display: inline-block;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
-  }
+    transition: transform 0.3s ease,filter 0.3s; /* 旋转持续时间：0.5秒，过渡效果：ease */
 
-  .color-button:hover {
-    outline: 2px solid #000;
+  }
+.color-button:hover{
+  filter: brightness(80%);
+}
+
+  .color-button:active {
+    transform: scale(0.8);
   }

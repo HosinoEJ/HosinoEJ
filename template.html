@@ -22,39 +22,41 @@
 -->
 
 <template id="head"><!--設置全部頁面元數據-->
-    <meta charset="UTF-8">
-    <title>HosinoEJ | Website</title>
-    <link rel="stylesheet" href="css/main.css"/><!--全网站统一标准-->
-    <link rel="stylesheet" href="css/IndexTitleCursor.css"/><!--设置主页标题动画的光标，其他地方也可以调用-->
-    <link rel="stylesheet" href="css/bg_setting.css"/><!--背景顏色設置-->
-    <link rel="icon" href="https://avatars.githubusercontent.com/u/177436503?v=4"/><!--图标-->
+  <meta charset="UTF-8">
+  <title>HosinoEJ | Website</title>
+  <link rel="stylesheet" href="css/main.css" /><!--全网站统一标准-->
+  <link rel="stylesheet" href="css/IndexTitleCursor.css" /><!--设置主页标题动画的光标，其他地方也可以调用-->
+  <link rel="stylesheet" href="css/bg_setting.css" /><!--背景顏色設置-->
+  <link rel="icon" href="https://avatars.githubusercontent.com/u/177436503?v=4" /><!--图标-->
 </template>
 
 
 
 
 
-<template id="bg_setting"><!--網頁背景個人化代碼 很遺憾這個用不了，所以功能只上綫于index-->
-    <button id="toggleSettings">⚙️</button><!--背景颜色设置按钮-->
-        <div id="settingsPanel"><!--設置背景顏色-->
-            <label for="bgColorPicker">選擇背景顏色</label>
-            <div class="flat-color" id="display-color"><!--調色盤按鈕，這一行是美化，下一行是主體。主體不透明度0-->
-                <input type="color" id="bgColorPicker" style="width: 100%; height: 100%; opacity: 0;"/>
-            </div>
+<template id="bg_setting"><!--網頁背景個人化代碼-->
+  <button id="toggleSettings" style="animation: IndextoggleSettings 2s forwards;">
+    <img id="gearIcon" src="image/gear.svg" alt="齿轮" width="24" height="24">
+  </button><!--背景颜色设置按钮 其中因爲主頁動畫原因，他的動畫是單獨的，在index.css裏-->
+  <div id="settingsPanel"><!--設置背景顏色-->
+    <label for="bgColorPicker">選擇背景顏色</label>
+    <div class="flat-color" id="display-color"><!--調色盤按鈕，這一行是美化，下一行是主體。主體不透明度0-->
+      <input type="color" id="bgColorPicker" style="width: 100%; height: 100%; opacity: 0;" />
+    </div>
 
-              <div style="margin-top: 1rem;"><!--手動輸入16進制顔色代碼-->
-                <label for="hexInput">手動輸入顏色代碼</label><br>
-                <input type="text" id="hexInput" placeholder="#cce7ff" maxlength="7" style="height: 25px;"/><br>
-              </div>
-        
-            <div class="color-options"><!--預設-->
-              <div class="color-button" style="background-color: #cce7ff;" data-color="#cce7ff"></div>
-              <div class="color-button" style="background-color: #ffe6e6;" data-color="#ffe6e6"></div>
-              <div class="color-button" style="background-color: #e6ffe6;" data-color="#e6ffe6"></div>
-              <div class="color-button" style="background-color: #f5e6ff;" data-color="#f5e6ff"></div>
-              <div class="color-button" style="background-color: #fff3cc;" data-color="#fff3cc"></div>
-            </div>
-          </div>
+    <div style="margin-top: 1rem;"><!--手動輸入16進制顔色代碼-->
+      <label for="hexInput">手動輸入顏色代碼</label><br>
+      <input type="text" id="hexInput" placeholder="#cce7ff" maxlength="7" style="height: 25px;" /><br>
+    </div>
+
+    <div class="color-options"><!--預設-->
+      <div class="color-button" style="background-color: #cce7ff;" data-color="#cce7ff"></div>
+      <div class="color-button" style="background-color: #ffe6e6;" data-color="#ffe6e6"></div>
+      <div class="color-button" style="background-color: #e6ffe6;" data-color="#e6ffe6"></div>
+      <div class="color-button" style="background-color: #f5e6ff;" data-color="#f5e6ff"></div>
+      <div class="color-button" style="background-color: #fff3cc;" data-color="#fff3cc"></div>
+    </div>
+  </div>
 </template>
 
 
@@ -62,19 +64,16 @@
 
 
 <template id="main_2"><!--副標題設置，可修改-->
-    お互いに尊重しよう
+  お互いに尊重しよう
 </template>
 
 
 <!--这是blig的had模板--><!--待修改-->
 <template id="blig_had" class="DivStyle-Glass">
-    <a class="button1" href="index.html">回到主页</a>
-    <a class="button" href="blog.html">社团博客</a>
-    <a class="button" href="news.html">社团新闻</a>
-    <a class="button" href="member-menu.html">社团成员</a>
+  <a href="index.html">
+    <img class="indexIcon" width="55px" style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/177436503?v=4"/>
+  </a>
+  <a class="button" href="Self-introduction.html">自己紹介</a>
+  <a class="button" href="https://youtube.com/@HosinoEJ">ユーチューブチャンネル</a>
+  <a class="button" href="https://github.com/HosinoEJ">Github</a>
 </template>
-
-
-
-
-

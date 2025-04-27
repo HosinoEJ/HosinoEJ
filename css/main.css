@@ -3,9 +3,9 @@
     font-family: 'Microsoft YaHei';
 }
 body{
-
     font-weight: bold;
-
+}
+.center_PG{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,6 +26,12 @@ body{
     backdrop-filter: blur(5px); /*毛玻璃效果*/
     box-shadow: 0 0 16px rgba(0, 0, 0, 0.5);
     border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.blig_had a{
+    margin: 0 8px;
 }
 
 
@@ -46,6 +52,9 @@ body{
 .button:hover{
     background-color: #0b26364d;
 }
+.button:active {
+    transform: scale(0.8);
+  }
 
 /*按钮样式1   (<a href="#" class="button1")*/
 .button1{
@@ -63,6 +72,9 @@ body{
 .button1:hover{
     background-color: #0a476a;
 }
+.button1:active {
+    transform: scale(0.8);
+  }
 
 
 /*链接文本1   (<a href="#" class="LinkText1")*/

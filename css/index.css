@@ -30,7 +30,7 @@
     
 }
 .indexButton a{/*主界面两个大按钮*/
-    width: 15%;
+    min-width: 15%;
     font-size: 150%;
     align-content: center;/*按钮文字居中*/
 }
