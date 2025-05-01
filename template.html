@@ -30,6 +30,12 @@
   <link rel="icon" href="https://avatars.githubusercontent.com/u/177436503?v=4" /><!--图标-->
 </template>
 
+<template id="javascript"><!--全頁面的js加載全在這裏！，但是，，需要直接寫在每個頁面，否則失效-->
+  <script src="js/IndexTransgender.js"></script><!--Index页面上的彩蛋——國際跨性別現身日时会将标题中的GTEJR变成跨性别旗-->
+  <script src="js/IndexTitleCursor.js"></script><!--主页动画-->
+  <script src="js/else-link.js"></script>
+</template>
+
 
 
 
@@ -38,7 +44,7 @@
   <button id="toggleSettings" style="animation: IndextoggleSettings 2s forwards;">
     <img id="gearIcon" src="image/gear.svg" alt="齿轮" width="24" height="24">
   </button><!--背景颜色设置按钮 其中因爲主頁動畫原因，他的動畫是單獨的，在index.css裏-->
-  <div id="settingsPanel"><!--設置背景顏色-->
+  <div id="settingsPanel" class="DivStyle-Glass"><!--設置背景顏色-->
     <label for="bgColorPicker">選擇背景顏色</label>
     <div class="flat-color" id="display-color"><!--調色盤按鈕，這一行是美化，下一行是主體。主體不透明度0-->
       <input type="color" id="bgColorPicker" style="width: 100%; height: 100%; opacity: 0;" />
@@ -70,10 +76,10 @@
 
 <!--这是blig的had模板--><!--待修改-->
 <template id="blig_had" class="DivStyle-Glass">
-  <a href="index.html">
+  <a href="index.html" data-animate-link>
     <img class="indexIcon" width="55px" style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/177436503?v=4"/>
   </a>
-  <a class="button" href="Self-introduction.html">自己紹介</a>
-  <a class="button" href="https://youtube.com/@HosinoEJ">ユーチューブチャンネル</a>
-  <a class="button" href="https://github.com/HosinoEJ">Github</a>
+  <a class="button" href="Self-introduction.html" data-animate-link>自己紹介</a>
+  <a class="button" href="https://youtube.com/@HosinoEJ" data-animate-link>ユーチューブチャンネル</a>
+  <a class="button" href="https://github.com/HosinoEJ" data-animate-link>Github</a>
 </template>

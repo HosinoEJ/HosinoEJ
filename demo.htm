@@ -2,7 +2,10 @@
 <html>
     <head class="head"><!--頭部信息通過template實現自動填充，保證每個頁面都是一樣的元數據。請前往./template.html查看元數據設置-->
     </head>
-    <body class="center_PG"><!--class="center_PG"的意思是讓這個頁面居中對齊，否則自己用display設定版面-->
+    <body class="center_PG"><!--class="center_PG"的意思是讓這個頁面居中對齊，否則自己用display設定版面（可選）-->
+        <div id="link_animate"></div><!--這是重定向動畫的遮罩（强制擁有）-->
+
+
         <div class="blig_had"></div><!--網站頭部欄，調用與template-->
         
 
@@ -13,7 +16,9 @@
             </div>
             <a class="button1" href="https://x.com/HosinoEJ">這是一個按鈕 樣式1</a>
             <a class="button" href="https://youtu.be/YGzQTjvrC2o">這是一個按鈕 樣式2</a>
-            <a href="https://www.youtube.com/@HosinoEJ" class="LinkText1">這是一個鏈接</a>
+            <a href="https://www.youtube.com/@HosinoEJ" class="LinkText1">這是一個鏈接</a>|
+
+            <a href="https://www.youtube.com/@HosinoEJ" class="LinkText1" data-animate-link>這是一個有重定向動畫的鏈接（按鈕同理）</a><!--當href為#時不要用-->
 
 
 
@@ -21,10 +26,11 @@
         </div>
 
         <div class="bg_setting"><!--這個可以讓頁面加入一個個人化背景的按鈕-->
-        </div>        
+        </div>
+
+        <!--以下三行直接ctrl c+v到新頁面上，這是js的模板-->
         <script src="js/template.js"></script><!--模版清单！很重要的一个词条库-->
-        <script src="js/IndexTransgender.js"></script><!--Index页面上的彩蛋——國際跨性別現身日时会将标题中的GTEJR变成跨性别旗-->
-        <script src="js/IndexTitleCursor.js"></script><!--主页动画-->
-        <script src="js/bg_setting.js"></script><!--設置背景顏色-->
+        <script src="/js/bg_setting.js"></script><!--設置背景顏色-->
+        <div class="javascript"></div>
     </body>
 </html>

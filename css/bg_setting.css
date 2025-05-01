@@ -1,6 +1,6 @@
 /*這個是背景顏色個人化按鈕控件的所有css代碼，為main.css的附錄1*/
 body{
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease;/*漸變動畫，bg_setting的基礎動畫*/
 }
 
 
@@ -12,10 +12,14 @@ body{
     border: 2px solid #ccc;
     background-color: #cce7ff;
     cursor: pointer;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.3s ease-in-out;
   }
   .flat-color:hover {
     border-color: #666;
+    border-radius: 50%;
+  }
+  .flat-color:active{
+    transform: scale(0.9);
   }
 
 
@@ -67,11 +71,8 @@ body{
     position: fixed;
     top: 80px;
     right: 50px;
-    background: rgba(255, 255, 255, 0.95);
-    border: 1px solid #ccc;
-    border-radius: 30px;
+
     padding: 1rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     z-index: 999;
     opacity: 0;
     pointer-events: none;
@@ -85,6 +86,8 @@ body{
     pointer-events: none;
   }
 
+  /*動畫部分*/
+/*================================================*/
 
 /*面板淡入淡出動畫*/
   @keyframes fadeIn {
@@ -97,6 +100,11 @@ body{
     to { opacity: 0; }
   }
 
+  @keyframes toggleSettings{/*個人化按鈕動畫*/
+    0%{bottom: -100px;}
+    100%{bottom: 20px;}
+}
+/*================================================*/
   
 
   .color-options {
