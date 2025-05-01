@@ -5,13 +5,27 @@
         <link rel="stylesheet" href="css/IndexTitleCursor.css"/><!--设置主页标题动画的光标，其他地方也可以调用-->
         <link rel="stylesheet" href="css/bg_setting.css"/><!--背景顏色設置-->
         <link rel="icon" href="https://avatars.githubusercontent.com/u/177436503?v=4"/><!--图标-->
+        <style>
+          .main{
+            margin: 0 8%;
+            display: flex;
+
+            flex-direction: row;
+            flex-wrap: wrap;
+          }
+        </style>
     </head>
     <body>
+      <div class="blig_had"></div><!--網站頭部欄，調用與template-->
         
             
 
 
-            
+      <div class="main">
+        <iframe src="https://scratch.mit.edu/projects/1168404675/embed" style="border-radius: 20px;"
+       allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
+
+      </div>
             
 
         
@@ -22,7 +36,7 @@
         <button id="toggleSettings" style="animation: IndextoggleSettings 2s forwards;">
             <img id="gearIcon" src="image/gear.svg" alt="齿轮" width="24" height="24">
         </button><!--背景颜色设置按钮 其中因爲主頁動畫原因，他的動畫是單獨的，在index.css裏-->
-        <div id="settingsPanel"><!--設置背景顏色-->
+        <div id="settingsPanel" class="DivStyle-Glass"><!--設置背景顏色-->
             <label for="bgColorPicker">選擇背景顏色</label>
             <div class="flat-color" id="display-color"><!--調色盤按鈕，這一行是美化，下一行是主體。主體不透明度0-->
                 <input type="color" id="bgColorPicker" style="width: 100%; height: 100%; opacity: 0;"/>
@@ -46,9 +60,8 @@
 
 
         
-        <script src="js/template.js"></script><!--模版清单！很重要的一个词条库-->
-        <script src="js/IndexTransgender.js"></script><!--Index页面上的彩蛋——國際跨性別現身日时会将标题中的GTEJR变成跨性别旗-->
-        <script src="js/IndexTitleCursor.js"></script><!--主页动画-->
-        <script src="/js/bg_setting.js"></script><!--設置背景顏色-->
+          <script src="js/template.js"></script><!--模版清单！很重要的一个词条库-->
+          <script src="/js/bg_setting.js"></script><!--設置背景顏色-->
+          <div class="javascript"></div>
     </body>
 </html>
