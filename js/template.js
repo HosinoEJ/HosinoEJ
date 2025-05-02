@@ -32,6 +32,7 @@ fetch('../template.html')
     if (document.querySelector('#bgColorPicker')) {
       initBgSetting(); // 定義於 bg_setting.js
     }
+
   });
 
 
