@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <style>
+            #link_animate {/*這個是點擊外部鏈接的動畫遮罩樣式和動畫部分*/
+    position: fixed;
+    width: 1px;
+    height: 1px;
+    left: 0;
+    top: 0;
+    border-radius: 50%;
+    opacity: 0;
+    background-color: white;
+    transition: all 0.6s ease;
+    z-index: 9999;/* 確保遮罩在最上層 */
+  }
+
+  #link_animate.active {
+    transform: scale(10000);
+    opacity: 1;
+}
+body{
+    background-color: #3388bb;
+}
+        </style>
+    </head>
+    <body>
+        <div id="link_animate"></div><!--這是重定向動畫的遮罩（强制擁有）-->
+
+        <a href="https://youtube.com" data-animate-link>Debug</a><br>
+        <a href="index.html" data-animate-link>Debug</a><br>
+        <a href="index.html" data-animate-link>Debug</a><br>
+        <a href="index.html" data-animate-link>Debug</a><br>
+        <a href="index.html" data-animate-link>Debug</a><br>
+        <a href="index.html" data-animate-link>Debug</a><br>
+        <a href="index.html" data-animate-link>Debug</a><br>
+
+
+        <script>
+            const overlay = document.getElementById('link_animate');
+
+document.querySelectorAll('[data-animate-link]').forEach(link => {
+  link.addEventListener('click', function (event) {
+    event.preventDefault();
+    const href = this.href;
+
+    overlay.classList.add('active');
+
+    setTimeout(() => {
+      window.location.href = href;
+    }, 500);
+  });
+});
+        </script>
+    </body>
+</html>
