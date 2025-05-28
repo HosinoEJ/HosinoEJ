@@ -19,3 +19,26 @@ const overlay = document.getElementById('link_animate');
             window.addEventListener('pageshow', (event) => {
               overlay.classList.remove('active');
             });
+
+
+
+//===========================================================================================
+            // 檢查瀏覽器的色彩模式
+function checkColorMode() {
+  const colorDiv = document.getElementById('link_animate');
+  
+  // 如果瀏覽器是深色模式
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    colorDiv.style.backgroundColor = '#333'; // 深色模式背景顏色
+    colorDiv.style.color = '#fff'; // 深色模式文字顏色
+  } else {
+    colorDiv.style.backgroundColor = '#fff'; // 淺色模式背景顏色
+    colorDiv.style.color = '#000'; // 淺色模式文字顏色
+  }
+}
+
+// 初始檢查色彩模式
+checkColorMode();
+
+// 監聽色彩模式變化
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', checkColorMode);
