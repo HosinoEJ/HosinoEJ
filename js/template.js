@@ -52,6 +52,11 @@ fetch('../template.html')
 
     window.info = function () {alert("星野栄治 © 2025｜GNU LICENSEによって転載してください");
     };
+    
+    window.TWHKnoCN = function () {
+      window.location.href = '1e2fc43tw12hk5103a/0d000721.html';
+    }
+
     console.log = function (message) { originalLog.apply(console, arguments);
     };
   

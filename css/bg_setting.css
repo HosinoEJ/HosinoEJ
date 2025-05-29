@@ -1,9 +1,4 @@
 /*這個是背景顏色個人化按鈕控件的所有css代碼，為main.css的附錄1*/
-body{
-    transition: background-color 0.3s ease;/*漸變動畫，bg_setting的基礎動畫*/
-}
-
-
 
   .flat-color {
     width: 40px;
