@@ -1,9 +1,11 @@
 * {/*全局設定*/
     margin: 0 0;/*删除边框*/
-    font-family: 'Microsoft YaHei';
+    
 }
 body{
     font-weight: bold;
+    font-family: 'MyCustomFont', sans-serif;
+    transition: background-color 0.3s ease;/*漸變動畫，bg_setting的基礎動畫*/
 }
 .center_PG{
     display: flex;
@@ -33,6 +35,16 @@ body{
 .blig_had a{
     margin: 0 8px;
 }
+
+/*字體全局設定*/
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('/fonts/jf-openhuninn-2.1.ttf') format('truetype'); /* 路徑根據實際情況調整 */
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 
 /*
 #link_animate {/*這個是點擊外部鏈接的動畫遮罩樣式和動畫部分
@@ -70,6 +82,9 @@ opacity: 1;
     transform: scale(10000);
     opacity: 1;
 }
+
+
+
 
 
 /*====================控件样式================================*/
@@ -123,11 +138,44 @@ opacity: 1;
 
 
 
+/* 輸入框樣式 */
+input[type="text"] {
+    padding: 10px;
+    border: 2px solid #0b2636;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* 半透明背景 */
+    color: white;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    backdrop-filter: blur(5px); /* 毛玻璃效果 */
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.5); /* 陰影效果 */
+    width: 250px;
+}
+
+/* 輸入框獲得焦點時的樣式 */
+input[type="text"]:focus {
+    background-color: rgba(11, 38, 54, 1); /* 焦點時背景更深 */
+    outline: none; /* 去掉邊框 */
+    transform: scale(1.05); /* 放大效果 */
+}
+
+/* 輸入框的placeholder樣式 */
+input[type="text"]::placeholder {
+    color: rgba(255, 255, 255, 0.7); /* 淡白色的placeholder */
+    font-weight: normal;
+}
+
+
+
+
 
 /* 当长宽比小于1:1时，使用另一种排版 */
 @media (max-aspect-ratio: 1/1){
     
 }
+
 
 
 
