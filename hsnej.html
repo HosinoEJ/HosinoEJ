@@ -13,6 +13,9 @@
             flex-direction: row;
             flex-wrap: wrap;
           }
+          .main *{
+            margin: 10px;
+          }
         </style>
     </head>
     <body>
@@ -25,6 +28,11 @@
       <div class="main">
         <iframe src="https://scratch.mit.edu/projects/1168404675/embed" style="border-radius: 20px;"
        allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
+
+       <iframe src="https://discord.com/widget?id=1316337715721011322&theme=dark" width="485" height="402"
+        allowtransparency="true" frameborder="0" 
+        style="border-radius: 20px;"
+        sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
 
       </div>
             
@@ -45,7 +53,7 @@
 
               <div style="margin-top: 1rem;"><!--手動輸入16進制顔色代碼-->
                 <label for="hexInput">手動輸入顏色代碼</label><br>
-                <input type="text" id="hexInput" placeholder="#cce7ff" maxlength="7" style="height: 25px;"/><br>
+                <input type="text" id="hexInput" placeholder="手動輸入顏色代碼" maxlength="7" style="height: 25px;"/><br>
               </div>
         
             <div class="color-options"><!--預設-->
@@ -64,5 +72,21 @@
           <script src="js/template.js"></script><!--模版清单！很重要的一个词条库-->
           <script src="/js/bg_setting.js"></script><!--設置背景顏色-->
           <div class="javascript"></div>
+          <script>
+            // 读取存储的元数据
+const metadata = localStorage.getItem('redirectMetadata');
+if (metadata) {
+    const parsedMetadata = JSON.parse(metadata);
+    console.log(parsedMetadata);  // 可以在控制台查看数据
+    // 根据元数据做相应的处理，比如不跳转到 Google 等
+    if (parsedMetadata.source === 'custom_page') {
+        // 进行自定义处理
+    }
+} else {
+    // 如果没有元数据，跳转到 Google
+    window.location.href = 'https://www.google.com';
+}
+
+          </script>
     </body>
 </html>
