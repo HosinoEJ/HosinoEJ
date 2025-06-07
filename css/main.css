@@ -39,7 +39,7 @@ body{
 /*字體全局設定*/
 @font-face {
     font-family: 'MyCustomFont';
-    src: url('/fonts/jf-openhuninn-2.1.ttf') format('truetype'); /* 路徑根據實際情況調整 */
+    src: url('/fonts/jf-openhuninn-2.1.woff2') format('truetype'); /* 路徑根據實際情況調整 */
     font-weight: normal;
     font-style: normal;
 }
