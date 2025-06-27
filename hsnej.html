@@ -74,7 +74,7 @@
           <div class="javascript"></div>
           <script>
             // 读取存储的元数据
-const metadata = localStorage.getItem('redirectMetadata');
+const metadata = sessionStorage.getItem('redirectMetadata');
 if (metadata) {
     const parsedMetadata = JSON.parse(metadata);
     console.log(parsedMetadata);  // 可以在控制台查看数据
@@ -83,8 +83,13 @@ if (metadata) {
         // 进行自定义处理
     }
 } else {
-    // 如果没有元数据，跳转到 Google
-    window.location.href = 'https://www.google.com';
+    // 存储元数据到 localStorage
+      sessionStorage.setItem('redirectMetadata', JSON.stringify({
+          source: 'os_page',
+          timestamp: Date.now(),
+      }));
+      // 跳转到 hsnej.html
+      window.location.href = '0d0007218964.html';
 }
 
           </script>

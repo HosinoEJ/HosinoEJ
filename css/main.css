@@ -3,7 +3,7 @@
     
 }
 body{
-    font-weight: bold;
+    /*font-weight: bold;*/
     font-family: 'MyCustomFont', sans-serif;
     transition: background-color 0.3s ease;/*漸變動畫，bg_setting的基礎動畫*/
 }
@@ -83,7 +83,7 @@ opacity: 1;
     opacity: 1;
 }
 
-
+#markdown-source { display: none; }/* 隐藏原始 Markdown 源码区域 */
 
 
 
