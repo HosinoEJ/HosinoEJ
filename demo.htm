@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head class="head"><!--頭部信息通過template實現自動填充，保證每個頁面都是一樣的元數據。請前往./template.html查看元數據設置-->
-        <style>
 
-
-        </style>
     </head>
     <body class="center_PG"><!--class="center_PG"的意思是讓這個頁面居中對齊，否則自己用display設定版面（可選）-->
         <div id="link_animate"></div><!--這是重定向動畫的遮罩（强制擁有）-->
@@ -27,6 +24,19 @@
 
           
         </div>
+
+        <pre id="markdown-source"><!--這裏是markdown的源碼，這個區域會被js隱藏，然後將內容轉換成html顯示在下面的div中-->
+# Markdown控件demo
+所需要的控件：/js/markdown.js
+注意：内容前面不可以有tab，否則無法識別
+# 比如：
+            ## 錯誤示範
+## 正確示範
+        </pre>
+        <div id="markdown-output"></div><!--這裏是markdown的輸出區域，js會將上面的源碼轉換成html顯示在這裏-->
+
+
+
 
         <div class="bg_setting"><!--這個可以讓頁面加入一個個人化背景的按鈕-->
         </div>
