@@ -87,6 +87,7 @@ opacity: 1;
 
 
 
+
 /*====================控件样式================================*/
 /*按钮样式   (<a href="#" class="button1")*/
 .button{
@@ -168,6 +169,18 @@ input[type="text"]::placeholder {
 }
 
 
+
+
+[data-animate-on-scroll] {/*on_scroll_css   當需要加載時開啓動畫*/
+  opacity: 0;
+  transform: translateX(500px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+[data-animate-on-scroll].visible {
+  opacity: 1;
+  transform: translateX(0);
+}
 
 
 

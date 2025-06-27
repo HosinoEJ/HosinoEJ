@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            [data-animate-on-scroll] {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+[data-animate-on-scroll].visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+        </style>
+    </head>
+    <body>
+
+  <p>滑動到這裡會自動出現</p>
+
+
+<div style="height: 1000px;"></div>
+
+<div data-animate-on-scroll>
+  <p style="background-color: aquamarine;">這是第二個動畫元素</p>
+</div>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const targets = document.querySelectorAll('[data-animate-on-scroll]');
+
+        const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            obs.unobserve(entry.target); // 只觸發一次就停止觀察
+            }
+        });
+        }, {
+        threshold: 0.1
+        });
+
+        targets.forEach(el => observer.observe(el));
+    });
+</script>
+
+    </body>
+</html>

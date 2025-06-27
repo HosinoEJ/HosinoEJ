@@ -1,7 +1,7 @@
 /*這裏是主頁特有的css代碼，其他頁面不調用（除非頁面直接由index.html移植而來）*/
 .main{/*主要内容*/
     width: 90%;
-    height: 100vh;
+    height: 101vh;
 }
 .main_2{/*副標題*/
     text-align: center;
