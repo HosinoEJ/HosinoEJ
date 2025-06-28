@@ -1,0 +1,57 @@
+#markdown-output table {
+    border-collapse: collapse;
+    margin: 1em 0;
+}
+#markdown-output th, #markdown-output td {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 6px 12px;
+    text-align: left;
+}
+#markdown-output th {
+    background: rgb(175, 175, 175);
+}
+#markdown-output blockquote {
+    border-left: 4px solid #ccc;
+    margin: 1em 0;
+    padding: 0.5em 1em;
+    color: #333333;
+    background: #f9f9f9a8;
+    border-radius: 10px 30px 30px 10px;
+}
+#markdown-output pre {
+    background: #272822;
+    color: #f8f8f2;
+    padding: 1em;
+    border-radius: 10px 30px 30px 10px; 
+    overflow-x: auto;
+}
+#markdown-output code {
+    background: #272822;
+    color: #00cd08;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-family: 'Consolas', 'Monaco', monospace;
+}
+#markdown-output pre code {
+    background-color: #ffffff00;
+}
+#markdown-output ul, #markdown-output ol {
+    margin: 1em 0 1em 2em;
+}
+#markdown-output li.task-list {
+    list-style: none;
+}
+#markdown-output input[type="checkbox"] {
+    margin-right: 0.5em;
+}
+#markdown-output hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 2em 0;
+}
+#markdown-output img {
+    max-width: 100%;
+    height: auto;
+    margin: 0.5em 0;
+}
