@@ -1,3 +1,5 @@
+#markdown-source { display: none; }/* 隐藏原始 Markdown 源码区域 */
+
 #markdown-output table {
     border-collapse: collapse;
     margin: 1em 0;
@@ -54,6 +56,10 @@
     max-width: 100%;
     height: auto;
     margin: 0.5em 0;
+}
+#markdown-output p {
+    margin: 1em 0;
+    line-height: 1.6;
 }
 .PG-end_license a {
     text-decoration: none;

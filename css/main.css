@@ -100,12 +100,12 @@ opacity: 1;
     opacity: 1;
 }
 
-#markdown-source { display: none; }/* 隐藏原始 Markdown 源码区域 */
 
 
 
 .little-icon {/*小图标*/
     margin: 5px 5px;
+    width: 24px;
 }
 
 
@@ -225,7 +225,10 @@ scale: 0;
 
 /* 当长宽比小于1:1时，使用另一种排版 */
 @media (max-aspect-ratio: 1/1){
-    
+    .little-icon {/*小图标*/
+    margin: 5px 5px;
+    width: 60px;
+}
 }
 
 
