@@ -16,6 +16,9 @@ html[lang="zh_cn"] body {
 html[lang="en_us"] body {
     font-family: 'zh-tw', sans-serif;
 }
+html[lang="ja_jp"] body {
+    font-family: 'ja-jp', sans-serif;
+}
 
 .center_PG{
     display: flex;
@@ -58,6 +61,13 @@ html[lang="en_us"] body {
 @font-face {
     font-family: 'zh_cn';
     src: url('/fonts/SmileySans-Oblique.woff2') format('truetype'); /* 路徑根據實際情況調整 */
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ja-jp';
+    src: url('/fonts/FGMediumHankaku.ttf') format('truetype'); /* 路徑根據實際情況調整 */
     font-weight: normal;
     font-style: normal;
 }
