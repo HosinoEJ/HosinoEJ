@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const targets = document.querySelectorAll('[data-animate-on-scroll]');
+    const targets = document.querySelectorAll('[data-animate-on-scroll-Left], [data-animate-on-scroll-Right]');
 
     const observer = new IntersectionObserver((entries, obs) => {
       entries.forEach(entry => {
@@ -14,3 +14,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     targets.forEach(el => observer.observe(el));
   });
+
+
