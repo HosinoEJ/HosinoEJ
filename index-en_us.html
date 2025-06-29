@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en_us">
+    <head class="head"><!--頭部信息通過template實現自動填充，保證每個頁面都是一樣的元數據。請前往./template.html查看元數據設置-->
+        <link rel="stylesheet" href="css/index.css"/><!--主页特有（喜-->
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <link rel="stylesheet" href="css/IndexTitleCursor.css"/><!--设置主页标题动画的光标，其他地方也可以调用-->
+    </head>
+    <body class="center_PG">
+        <div id="link_animate"></div>
+        <div class="main"><!--Main主要-->
+            <div class="title"><!--Title-->
+                <img class="indexIcon" width="100px" style="border-radius: 50%; margin: 0 25px;" src="https://avatars.githubusercontent.com/u/177436503?v=4"/><!--title_icon是标题图标-->
+                <div id="IndexTitle" style="opacity: 0;">Welcome The Channel of HosinoEJ Website</div><!--這裏本質上是看不見的，實際上爲了動畫，這些文字在下一行的id="output"顯示-->
+                <div id="outPut"></div><!--標題顯示-->
+            </div>
+
+            <div class="main_2">We respect each other</div><!--副标题,修改請前往template.html-->
+            
+
+
+            
+            <div class="indexButton"><!--indexButton是主页按钮-->
+                <a href="https://x.com/HosinoEJ" class="button1" data-animate-link>X</a>
+                <a href="https://naniang.hsnej.fun" class="button">MTF2025 Survey</a>
+            </div>
+            <div id="link_elseWeb">
+                <img src="/image/youtube.svg" alt="youtube" width="24" height="24" class="little-icon">
+                <a href="https://youtube.com/@HosinoEJ" class="LinkText1" data-animate-link>YouTube</a>
+                |
+                <img src="/image/github.svg" alt="youtube" width="24" height="24" class="little-icon">
+                <a href="https://github.com/HosinoEJ" class="LinkText1" data-animate-link>GitHub</a>
+                |
+                <img src="/image/discord.svg" alt="youtube" width="24" height="24" class="little-icon">
+                <a href="https://reurl.cc/8Dz8d7" class="LinkText1" data-animate-link>Discord</a>
+            </div>
+        </div>
+
+
+        <div>
+            <pre id="markdown-source">
+# Self-introduction
+
+Ciallo! Hello everyone, I am Hoshino Eiji, from **mainland China**, English HosinoEJ comes from Japanese ほしのえいじ (Hoshino Eiji's pseudonym spelling). I used to be a UP host on Bilibili, but I stopped updating permanently. Now I make videos on YouTube,~~ Actually I haven't done it yet. ~~
+
+Date supports the Republic of China calendar and the Japanese calendar
+
+**Language**: ZH_CN | ZH_TW | Ja_JP
+
+I like to play **Maikuai**, if you are willing, you can play together. I also like to play **Galgame**.
+
+Originally it was the Jianzheng channel, but now it is not.
+
+I am currently learning Japanese, and plan to take the N2 exam in October 2017, and plan to study in Japan in April 2018. Now I occasionally make Japanese translations for github open source projects
+
+WeChat and QQ are not accepted, but DISCORD is accepted
+
+Bitcoin thanks for the donation: **bc1psmmsscgms42g0s5xknvf85yy9evj7ftac3agk3v3zvfjun3n0hfsgqfnml**
+
+
+
+
+            </pre>
+            <div style="padding: 20px 20px; width: 75%; margin: 0 auto;" id="markdown-output" class="DivStyle-Glass" data-animate-on-scroll-Left></div>
+
+
+
+
+        </div>
+
+        
+
+
+        <div class="bg_setting"><!--這個可以讓頁面加入一個個人化背景的按鈕-->
+        </div>
+
+        
+        <div class="PG-end_license" style="width: 100%;"></div>
+        
+        <script src="js/template.js"></script><!--模版清单！很重要的一个词条库-->
+        <script src="/js/bg_setting.js"></script><!--設置背景顏色-->
+        <script src="/js/on_scroll.js"></script>
+        <div class="javascript"></div><!--它是div加載動畫，不適用於templates-->
+    </body>
+</html>

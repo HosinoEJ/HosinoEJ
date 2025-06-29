@@ -4,9 +4,19 @@
 }
 body{
     /*font-weight: bold;*/
-    font-family: 'MyCustomFont', sans-serif;
     transition: background-color 0.3s ease;/*漸變動畫，bg_setting的基礎動畫*/
 }
+
+html[lang="zh_tw"] body {/*這個是自動選擇字體*/
+    font-family: 'zh-tw', sans-serif;
+}
+html[lang="zh_cn"] body {
+    font-family: 'zh_cn', sans-serif;
+}
+html[lang="en_us"] body {
+    font-family: 'zh-tw', sans-serif;
+}
+
 .center_PG{
     display: flex;
     justify-content: center;
@@ -38,12 +48,19 @@ body{
 
 /*字體全局設定*/
 @font-face {
-    font-family: 'MyCustomFont';
+    font-family: 'zh-tw';
     src: url('/fonts/jf-openhuninn-2.1.woff2') format('truetype'); /* 路徑根據實際情況調整 */
     font-weight: normal;
     font-style: normal;
 }
 
+
+@font-face {
+    font-family: 'zh_cn';
+    src: url('/fonts/SmileySans-Oblique.woff2') format('truetype'); /* 路徑根據實際情況調整 */
+    font-weight: normal;
+    font-style: normal;
+}
 
 
 /*

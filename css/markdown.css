@@ -55,3 +55,7 @@
     height: auto;
     margin: 0.5em 0;
 }
+.PG-end_license a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}

@@ -6,8 +6,8 @@ Index中的标题中的“GTEJR”五个字母会变成跨性别旗的五个颜�
 document.addEventListener("DOMContentLoaded", updateText);
 
 function updateText() {
-    const targetMonth = 5; // JavaScript 的月份从 0 开始，0 代表一月
-    const targetDay = 29;
+    const targetMonth = 3; // JavaScript 的月份从 0 开始，0 代表一月
+    const targetDay = 1;
   
     const today = new Date();
   
@@ -20,7 +20,14 @@ function updateText() {
         <t id="c-g">J</t>
       `;
       const originalText = document.getElementById("IndexTitle").textContent;
-      const newText = originalText.replace("HSNEJ", coloredGTEJR);
+      let newText = originalText;
+      const keywords = ["HosinoEJ", "星野栄治", "星野榮治" , "星野荣治"];
+      for (const keyword of keywords) {
+        if (originalText.includes(keyword)) {
+          newText = originalText.replace(keyword, coloredGTEJR);
+          break;
+        }
+      }
       document.getElementById("IndexTitle").innerHTML = newText;
     }
   }

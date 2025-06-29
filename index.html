@@ -1,145 +1,31 @@
 <!DOCTYPE html>
-<html>
-    <head class="head"><!--頭部信息通過template實現自動填充，保證每個頁面都是一樣的元數據。請前往./template.html查看元數據設置-->
-        <meta name="google-site-verification" content="c7cyuXRtDHFQpGuwA3gf4P-yEDHdjBJEuuDgH0t_tHk" />
-        <link rel="stylesheet" href="css/index.css"/><!--主页特有（喜-->
-        <link rel="stylesheet" href="css/main.css"/><!--全网站统一标准-->
-        <link rel="stylesheet" href="css/IndexTitleCursor.css"/><!--设置主页标题动画的光标，其他地方也可以调用-->
-        <link rel="stylesheet" href="css/bg_setting.css"/><!--背景顏色設置-->
-        <link rel="icon" href="https://avatars.githubusercontent.com/u/177436503?v=4"/><!--图标-->
-    </head>
-    <body class="center_PG">
-        <div id="link_animate"></div>
-        <div class="main"><!--Main主要-->
-            <div class="title"><!--Title-->
-                <img class="indexIcon" width="100px" style="border-radius: 50%; margin: 0 25px;" src="https://avatars.githubusercontent.com/u/177436503?v=4"/><!--title_icon是标题图标-->
-                <div id="IndexTitle" style="opacity: 0;">Welcome The Channel of HSNEJ Website</div><!--這裏本質上是看不見的，實際上爲了動畫，這些文字在下一行的id="output"顯示-->
-                <div id="outPut"></div><!--標題顯示-->
-            </div>
+<html lang="en">
+<head>
+    <meta name="google-site-verification" content="c7cyuXRtDHFQpGuwA3gf4P-yEDHdjBJEuuDgH0t_tHk" />
+    <meta charset="UTF-8">
+    <title>Redirecting...</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var lang = navigator.language || navigator.userLanguage || 'en-US';
+            lang = lang.toLowerCase().replace('-', '_');
+            var target = 'index-' + lang + '.html';
 
-            <div class="main_2"></div><!--副标题,修改請前往template.html-->
-            
-
-
-            
-            <div class="indexButton"><!--indexButton是主页按钮-->
-                <a href="https://x.com/HosinoEJ" class="button1" data-animate-link>X</a>
-                <a href="https://naniang.hsnej.fun" class="button">男娘2025調查</a>
-            </div>
-            <div id="link_elseWeb">
-                <img src="/image/youtube.svg" alt="youtube" width="24" height="24" class="little-icon">
-                <a href="https://youtube.com/@HosinoEJ" class="LinkText1" data-animate-link>YouTube</a>
-                |
-                <img src="/image/github.svg" alt="youtube" width="24" height="24" class="little-icon">
-                <a href="https://github.com/HosinoEJ" class="LinkText1" data-animate-link>GitHub</a>
-                |
-                <img src="/image/discord.svg" alt="youtube" width="24" height="24" class="little-icon">
-                <a href="https://reurl.cc/8Dz8d7" class="LinkText1" data-animate-link>Discord</a>
-            </div>
-        </div>
-
-
-        <div>
-            <pre id="markdown-source">
-# 自介
-
-
-
-Ciallo！大家好，我是星野栄治，來自**中國大陸**，英文HosinoEJ來自日文ほしのえいじ（星野栄治的假名拼寫）原b站一個UP主,但是永久停更,現在在YouTube製作影片，~~其實還沒做的啦。~~
-
-日期支持民國曆和日本曆
-
-**語言**：ZH_CN | ZH_TW | Ja_JP
-
-喜歡玩**麥塊**，願意的話可以一起玩的啦。
-
-原先是建政頻道，現在不做。
-
-現在正在學習日語，計畫令和七年10月份考N2，令和八年4月計畫去日本留學。現在偶爾會給github的開源項目製作日本語翻譯
-
-謝絕加微信和QQ，但是可以加DISCORD。
-
-Bitcoin感謝投喂：**bc1psmmsscgms42g0s5xknvf85yy9evj7ftac3agk3v3zvfjun3n0hfsgqfnml**
-
-
-
-
-            </pre>
-            <div style="padding: 20px 20px; width: 75%; margin: 0 auto;" id="markdown-output" class="DivStyle-Glass" data-animate-on-scroll-Left></div>
-
-
-
-            <pre id="markdown-source">
-# 自介
-
-
-
-Ciallo！大家好，我是星野栄治，來自**中國大陸**，英文HosinoEJ來自日文ほしのえいじ（星野栄治的假名拼寫）原b站一個UP主,但是永久停更,現在在YouTube製作影片，~~其實還沒做的啦。~~
-
-日期支持民國曆和日本曆
-
-**語言**：ZH_CN | ZH_TW | Ja_JP
-
-喜歡玩**麥塊**，願意的話可以一起玩的啦。
-
-原先是建政頻道，現在不做。
-
-現在正在學習日語，計畫令和七年10月份考N2，令和八年4月計畫去日本留學。現在偶爾會給github的開源項目製作日本語翻譯
-
-謝絕加微信和QQ，但是可以加DISCORD。
-
-Bitcoin感謝投喂：**bc1psmmsscgms42g0s5xknvf85yy9evj7ftac3agk3v3zvfjun3n0hfsgqfnml**
-
-
-
-
-            </pre>
-            <div style="padding: 20px 20px; width: 75%; margin: 30px auto;" id="markdown-output" class="DivStyle-Glass" data-animate-on-scroll-Right></div>
-        </div>
-
-        
-
-
-        <!--以下是背景顏色個人化設置-->
-        <!--===========================================================-->
-        <button id="toggleSettings" style="animation: IndextoggleSettings 2s forwards;">
-            <img id="gearIcon" src="image/gear.svg" alt="齿轮" width="24" height="24">
-        </button><!--背景颜色设置按钮 其中因爲主頁動畫原因，他的動畫是單獨的，在index.css裏-->
-        <div id="settingsPanel" class="DivStyle-Glass"><!--設置背景顏色-->
-            <label for="bgColorPicker">選擇背景顏色</label>
-            <div class="flat-color" id="display-color"><!--調色盤按鈕，這一行是美化，下一行是主體。主體不透明度0-->
-                <input type="color" id="bgColorPicker" style="width: 100%; height: 100%; opacity: 0;"/>
-            </div>
-
-              <div style="margin-top: 1rem;"><!--手動輸入16進制顔色代碼-->
-                <label for="hexInput">手動輸入顏色代碼</label>
-                <p style="margin-top: 10px;">
-                    <input type="text" id="hexInput" placeholder="手動輸入顏色代碼" maxlength="7" />
-                </p>
-                <br>
-              </div>
-        
-            <div class="color-options"><!--預設-->
-              <div class="color-button" style="background-color: #cce7ff;" data-color="#cce7ff"></div>
-              <div class="color-button" style="background-color: #ffe6e6;" data-color="#ffe6e6"></div>
-              <div class="color-button" style="background-color: #e6ffe6;" data-color="#e6ffe6"></div>
-              <div class="color-button" style="background-color: #f5e6ff;" data-color="#f5e6ff"></div>
-              <div class="color-button" style="background-color: #fff3cc;" data-color="#fff3cc"></div>
-            </div>
-          </div>
-          <!--===========================================================-->
-
-        
-        <div style="background-color: #000000; color: white; width: 100%; height: 10vh; margin: 16px 0 0; text-align: center; padding: 10px 0;"><!--版權信息等-->
-            <pre id="markdown-source">
-版權所有©HosinoEJ - 民國114年
-            </pre>
-            <div id="markdown-output"></div>
-        </div>
-        
-        <script src="js/template.js"></script><!--模版清单！很重要的一个词条库-->
-        <script src="/js/bg_setting.js"></script><!--設置背景顏色-->
-        <script src="/js/on_scroll.js"></script>
-        <div class="javascript"></div><!--它是div加載動畫，不適用於templates-->
-    </body>
+            // 檢查目標頁面是否存在
+            fetch(target, {method: 'HEAD'})
+                .then(function(response) {
+                    if (response.ok) {
+                        window.location.href = target;
+                    } else {
+                        window.location.href = 'index-zh_tw.html';
+                    }
+                })
+                .catch(function() {
+                    window.location.href = 'index-zh_tw.html';
+                });
+        });
+    </script>
+</head>
+<body>
+    <p>Redirecting...</p>
+</body>
 </html>

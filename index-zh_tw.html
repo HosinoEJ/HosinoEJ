@@ -1,30 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh_tw">
     <head class="head"><!--頭部信息通過template實現自動填充，保證每個頁面都是一樣的元數據。請前往./template.html查看元數據設置-->
-        <meta name="google-site-verification" content="c7cyuXRtDHFQpGuwA3gf4P-yEDHdjBJEuuDgH0t_tHk" />
         <link rel="stylesheet" href="css/index.css"/><!--主页特有（喜-->
-        <link rel="stylesheet" href="css/main.css"/><!--全网站统一标准-->
         <link rel="stylesheet" href="css/IndexTitleCursor.css"/><!--设置主页标题动画的光标，其他地方也可以调用-->
-        <link rel="stylesheet" href="css/bg_setting.css"/><!--背景顏色設置-->
-        <link rel="icon" href="https://avatars.githubusercontent.com/u/177436503?v=4"/><!--图标-->
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     </head>
     <body class="center_PG">
         <div id="link_animate"></div>
         <div class="main"><!--Main主要-->
             <div class="title"><!--Title-->
                 <img class="indexIcon" width="100px" style="border-radius: 50%; margin: 0 25px;" src="https://avatars.githubusercontent.com/u/177436503?v=4"/><!--title_icon是标题图标-->
-                <div id="IndexTitle" style="opacity: 0;">歡迎來到HSNEJ的個人網站</div><!--這裏本質上是看不見的，實際上爲了動畫，這些文字在下一行的id="output"顯示-->
+                <div id="IndexTitle" style="opacity: 0;">歡迎來到星野榮治的個人網站</div><!--這裏本質上是看不見的，實際上爲了動畫，這些文字在下一行的id="output"顯示-->
                 <div id="outPut"></div><!--標題顯示-->
             </div>
 
-            <div class="main_2"></div><!--副标题,修改請前往template.html-->
+            <div class="main_2">我們互相尊重</div><!--副标题,修改請前往template.html-->
             
 
 
             
             <div class="indexButton"><!--indexButton是主页按钮-->
-                <a href="https://x.com/HosinoEJ" class="button1" data-animate-link>X</a>
-                <a href="https://naniang.hsnej.fun" class="button">男娘2025調查</a>
+                <a href="https://x.com/HosinoEJ" class="button1" data-animate-link>我的推特</a>
+                <a href="https://naniang.hsnej.fun" class="button">MTF2025調查</a>
             </div>
             <div id="link_elseWeb">
                 <img src="/image/youtube.svg" alt="youtube" width="24" height="24" class="little-icon">
@@ -51,7 +48,7 @@ Ciallo！大家好，我是星野栄治，來自**中國大陸**，英文HosinoE
 
 **語言**：ZH_CN | ZH_TW | Ja_JP
 
-喜歡玩**麥塊**，願意的話可以一起玩的啦。
+喜歡玩**麥塊**，願意的話可以一起玩的啦。也喜歡玩**Galgame**。
 
 原先是建政頻道，現在不做。
 
@@ -75,34 +72,8 @@ Bitcoin感謝投喂：**bc1psmmsscgms42g0s5xknvf85yy9evj7ftac3agk3v3zvfjun3n0hfs
         
 
 
-        <!--以下是背景顏色個人化設置-->
-        <!--===========================================================-->
-        <button id="toggleSettings" style="animation: IndextoggleSettings 2s forwards;">
-            <img id="gearIcon" src="image/gear.svg" alt="齿轮" width="24" height="24">
-        </button><!--背景颜色设置按钮 其中因爲主頁動畫原因，他的動畫是單獨的，在index.css裏-->
-        <div id="settingsPanel" class="DivStyle-Glass"><!--設置背景顏色-->
-            <label for="bgColorPicker">選擇背景顏色</label>
-            <div class="flat-color" id="display-color"><!--調色盤按鈕，這一行是美化，下一行是主體。主體不透明度0-->
-                <input type="color" id="bgColorPicker" style="width: 100%; height: 100%; opacity: 0;"/>
-            </div>
-
-              <div style="margin-top: 1rem;"><!--手動輸入16進制顔色代碼-->
-                <label for="hexInput">手動輸入顏色代碼</label>
-                <p style="margin-top: 10px;">
-                    <input type="text" id="hexInput" placeholder="手動輸入顏色代碼" maxlength="7" />
-                </p>
-                <br>
-              </div>
-        
-            <div class="color-options"><!--預設-->
-              <div class="color-button" style="background-color: #cce7ff;" data-color="#cce7ff"></div>
-              <div class="color-button" style="background-color: #ffe6e6;" data-color="#ffe6e6"></div>
-              <div class="color-button" style="background-color: #e6ffe6;" data-color="#e6ffe6"></div>
-              <div class="color-button" style="background-color: #f5e6ff;" data-color="#f5e6ff"></div>
-              <div class="color-button" style="background-color: #fff3cc;" data-color="#fff3cc"></div>
-            </div>
-          </div>
-          <!--===========================================================-->
+        <div class="bg_setting"><!--這個可以讓頁面加入一個個人化背景的按鈕-->
+        </div>
 
         
         <div class="PG-end_license" style="width: 100%;"></div>
