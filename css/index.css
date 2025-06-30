@@ -43,6 +43,17 @@
 }
 
 
+.Text-content{
+    display: flex;
+    flex-direction: column;
+}
+.Text-content #markdown-output{/*主界面文字内容容器*/
+    padding: 20px 20px;
+    width: 75%;
+    margin: 20px auto;
+}
+
+
 /*国际跨性别现身日彩蛋对应的颜色，配合/js/IndexTransgender.js食用*/
 #c-g { color: #5bcffa; }
 #c-t { color: #f5abb9; }
