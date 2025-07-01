@@ -125,3 +125,15 @@
   .color-button:active {
     transform: scale(0.8);
   }
+
+
+
+
+  /* 当长宽比小于1:1时，使用另一种排版 */
+@media (max-aspect-ratio: 1/1){
+  #toggleSettings {
+    width: 300px;
+    height: 300px;
+    bottom: 0px;
+  }
+}

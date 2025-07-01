@@ -2,19 +2,18 @@
 <html lang="zh_cn">
     <head class="head"><!--頭部信息通過template實現自動填充，保證每個頁面都是一樣的元數據。請前往./template.html查看元數據設置-->
         <link rel="stylesheet" href="css/index.css"/><!--主页特有（喜-->
-        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
         <link rel="stylesheet" href="css/IndexTitleCursor.css"/><!--设置主页标题动画的光标，其他地方也可以调用-->
     </head>
     <body class="center_PG"><!--body的字體設置，這裏是簡體中文-->
         <div id="link_animate"></div>
         <div class="main"><!--Main主要-->
             <div class="title"><!--Title-->
-                <img class="indexIcon" width="100px" style="border-radius: 50%; margin: 0 25px;" src="https://avatars.githubusercontent.com/u/177436503?v=4"/><!--title_icon是标题图标-->
+                <div class="mainy-photo"></div><!--我的大頭貼-->
                 <div id="IndexTitle" style="opacity: 0;">欢迎来到星野荣治的个人网站</div><!--這裏本質上是看不見的，實際上爲了動畫，這些文字在下一行的id="output"顯示-->
                 <div id="outPut"></div><!--標題顯示-->
             </div>
 
-            <div class="main_2">我们互相尊重</div><!--副标题,修改請前往template.html-->
+            <div class="main_2">我想大声说点什么，最后还是把嘴闭了回去。因为我知道我除了安慰什么也做不到。</div><!--副标题,修改请前往template.html-->
             
 
 
