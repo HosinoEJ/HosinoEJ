@@ -7,6 +7,10 @@ body{
     transition: background-color 0.3s ease;/*漸變動畫，bg_setting的基礎動畫*/
 }
 
+a{
+    color: rgb(36, 105, 253);
+}
+
 html[lang="zh_tw"] body {/*這個是自動選擇字體*/
     font-family: 'zh-tw', sans-serif;
 }
@@ -32,6 +36,8 @@ html[lang="ja_jp"] body {
     backdrop-filter: blur(5px); /*毛玻璃效果*/
     box-shadow: 0 0 16px rgba(0, 0, 0, 0.5);
     border-radius: 30px;
+    background-color: #ffffff28;
+    word-wrap: break-word;
 }
 .blig_had{
     width: 80%;
@@ -91,6 +97,11 @@ z-index: 9999;
 opacity: 1;
 }
 */
+
+.PG-end_license a {
+    color: rgb(255, 255, 255);
+}
+
 
 #link_animate {/*這個是點擊外部鏈接的動畫遮罩樣式和動畫部分*/
     position: fixed;
@@ -164,7 +175,6 @@ opacity: 1;
 
 /*链接文本1   (<a href="#" class="LinkText1")*/
 .LinkText1{
-    text-decoration: none;
     color: black;
 }
 
@@ -199,36 +209,6 @@ input[type="text"]:focus {
 input[type="text"]::placeholder {
     color: rgba(255, 255, 255, 0.7); /* 淡白色的placeholder */
     font-weight: normal;
-}
-
-
-
-
-[data-animate-on-scroll-Left] {/*on_scroll_css   當需要加載時開啓動畫*/
-  opacity: 0;
-  transform: translateX(-500px);
-transition: opacity 0.6s ease, transform 0.6s ease;
-scale: 0;
-}
-
-[data-animate-on-scroll-Left].visible {
-  opacity: 1;
-  transform: translateX(0);
-  scale: 1;
-}
-
-
-[data-animate-on-scroll-Right] {/*on_scroll_css   當需要加載時開啓動畫*/
-  opacity: 0;
-  transform: translateX(500px);
-transition: opacity 0.6s ease, transform 0.6s ease;
-scale: 0;
-}
-
-[data-animate-on-scroll-Right].visible {
-  opacity: 1;
-  transform: translateX(0);
-  scale: 1;
 }
 
 

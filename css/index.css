@@ -1,7 +1,14 @@
 /*這裏是主頁特有的css代碼，其他頁面不調用（除非頁面直接由index.html移植而來）*/
-.main{/*主要内容*/
-    width: 90%;
+.main-title{
+    position:fixed;
+    z-index:0;
+    top:0;
+    left:0;
+    width:100%;
+}
+.title-Placeholder{/*主標題前占位*/
     height: 101vh;
+    z-index: 1;
 }
 .main_2{/*副標題*/
     text-align: center;
