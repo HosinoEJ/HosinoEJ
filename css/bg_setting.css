@@ -127,4 +127,36 @@
   }
 
 
+  
+/* 背景漸變動畫 */
+body {
+  transition: background-color 0.5s cubic-bezier(0.4,0,0.2,1), background-image 0.6s cubic-bezier(0.4,0,0.2,1);
+}
+
+
+
+/* 圖片縮圖選中樣式 */
+.bg-image-thumb{
+  object-fit:cover;
+  width: 50px;
+    height: 50px;
+    border-radius: 30%;
+    border: 2px solid #fff;
+    margin-right: 10px;
+    cursor: pointer;
+    display: inline-block;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease,filter 0.3s; /* 旋转持续时间：0.5秒，过渡效果：ease */
+}
+.bg-image-thumb:hover{
+  filter: brightness(80%);
+}
+.bg-image-thumb:active {
+    transform: scale(0.8);
+  }
+
+
+
+
+
 
