@@ -25,52 +25,14 @@
           
         </div>
 
+        <pre id="markdown-source" ><!--這裏是markdown的源碼，這個區域會被js隱藏，然後將內容轉換成html顯示在下面的div中-->
+# 星の日記
+        </pre>
+        <div id="markdown-output" ></div><!--這裏是markdown的輸出區域，js會將上面的源碼轉換成html顯示在這裏-->
 
 
-
-
-
-
-        
-        <button id="toggleSettings" style="animation: IndextoggleSettings 2s forwards;">
-    <img id="gearIcon" src="image/gear.svg" alt="齿轮" width="24" height="24">
-  </button><!--背景颜色设置按钮 其中因爲主頁動畫原因，他的動畫是單獨的，在index.css裏-->
-  <div id="settingsPanel" class="DivStyle-Glass"><!--設置背景顏色-->
-    <label for="bgColorPicker">選擇背景顏色</label>
-    <div class="flat-color" id="display-color"><!--調色盤按鈕，這一行是美化，下一行是主體。主體不透明度0-->
-      <input type="color" id="bgColorPicker" style="width: 100%; height: 100%; opacity: 0;" />
-    </div>
-
-    <div style="margin-top: 1rem;"><!--手動輸入16進制顔色代碼-->
-      <div>
-        <input type="text" id="hexInput" placeholder="手動輸入顏色代碼" maxlength="7" style="height: 25px;" />
-        <br>
-      </div>
-      <br>
-    </div>
-
-    <div class="color-options"><!--預設-->
-      <div class="color-button" style="background-color: #cce7ff;" data-color="#cce7ff"></div>
-      <div class="color-button" style="background-color: #ffe6e6;" data-color="#ffe6e6"></div>
-      <div class="color-button" style="background-color: #e6ffe6;" data-color="#e6ffe6"></div>
-      <div class="color-button" style="background-color: #f5e6ff;" data-color="#f5e6ff"></div>
-      <div class="color-button" style="background-color: #fff3cc;" data-color="#fff3cc"></div>
-    </div>
-    <!-- 新增圖片選擇區塊 -->
-    <div class="image-options" style="margin-top: 1rem;">
-      <label>或選擇背景圖片</label>
-      <div style="display: flex; gap: 8px; margin-top: 0.5rem;">
-        <img src="image/bg1.jpg" class="bg-image-thumb" data-bg-image="image/bg1.jpg" style="width:48px;height:48px;object-fit:cover;cursor:pointer;border-radius:6px;border:2px solid #eee;">
-        <img src="image/bg2.jpg" class="bg-image-thumb" data-bg-image="image/bg2.jpg" style="width:48px;height:48px;object-fit:cover;cursor:pointer;border-radius:6px;border:2px solid #eee;">
-        <img src="https://img.youliss.net/pcapi.php" class="bg-image-thumb" data-bg-image="https://img.youliss.net/pcapi.php" style="width:48px;height:48px;object-fit:cover;cursor:pointer;border-radius:6px;border:2px solid #eee;" title="隨機圖片">
-      </div>
-    </div>
-  </div> 
-
-
-
-
-
+        <div class="bg_setting"><!--這個可以讓頁面加入一個個人化背景的按鈕-->
+        </div>
 
         <div class="PG-end_license" style="width: 100%;"></div><!--頁脚版權信息-->
 
