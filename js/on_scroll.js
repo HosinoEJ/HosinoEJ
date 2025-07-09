@@ -9,7 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     }, {
-      threshold: 0.1
+      rootMargin: '-100px -100px -100px -100px', // 提前100px觸發
+  threshold: 0
     });
 
     targets.forEach(el => observer.observe(el));
