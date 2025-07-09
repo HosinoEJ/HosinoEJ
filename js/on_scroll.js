@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     }, {
-      threshold: 0.1
+      threshold: 0.0001
     });
 
     targets.forEach(el => observer.observe(el));

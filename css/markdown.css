@@ -16,6 +16,7 @@
 #markdown-output blockquote {
     border-left: 4px solid #ccc;
     margin: 1em 0;
+    width: 50%;
     padding: 0.5em 1em;
     color: #333333;
     background: #f9f9f9a8;
@@ -49,7 +50,7 @@
 }
 #markdown-output hr {
     border: none;
-    border-top: 1px solid #ccc;
+    border-top: 4px solid #000000;
     margin: 2em 0;
 }
 #markdown-output img {
