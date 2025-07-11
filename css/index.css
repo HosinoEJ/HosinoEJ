@@ -98,7 +98,7 @@
 /*动画部分*/
 
 /*主页按钮动画*/
-.indexButton a{animation: IndexButton 2s forwards;}
+.indexButton{animation: IndexButton 2s forwards;}
 @keyframes IndexButton{
     0%{opacity: 0;}
     50%{opacity: 0;}
