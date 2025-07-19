@@ -144,6 +144,7 @@ opacity: 1;
     cursor: pointer;
     display: inline-block;
     transition: 0.5s;
+    background-color: #ffffff00;
 }
 .button:hover{
     background-color: #0b26364d;
