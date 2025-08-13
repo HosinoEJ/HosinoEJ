@@ -1,10 +1,15 @@
 * {/*全局設定*/
     margin: 0 0;/*删除边框*/
+    box-sizing: border-box; /* 讓 padding 和 border 包含在 width 內 */
     
 }
 body{
     /*font-weight: bold;*/
     transition: background-color 0.3s ease;/*漸變動畫，bg_setting的基礎動畫*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh; /* 確保 body 至少佔滿整個視窗高度 */
 }
 
 a{
@@ -39,9 +44,9 @@ html[lang="ja_jp"] body {
     background-color: #ffffff28;
     word-wrap: break-word;
 }
-.blig_had{
+.header{
     width: 80%;
-    padding: 30px;
+    padding: 30px 0;
     margin: 20px auto;
 
     backdrop-filter: blur(5px); /*毛玻璃效果*/
@@ -51,7 +56,7 @@ html[lang="ja_jp"] body {
     justify-content: center;
     align-items: center;
 }
-.blig_had a{
+.header a{
     margin: 0 8px;
 }
 
@@ -98,9 +103,6 @@ opacity: 1;
 }
 */
 
-.PG-end_license a {
-    color: rgb(255, 255, 255);
-}
 
 
 #link_animate {/*這個是點擊外部鏈接的動畫遮罩樣式和動畫部分*/
@@ -129,7 +131,12 @@ opacity: 1;
     width: 24px;
 }
 
-
+.port{
+    margin: auto 10%;
+    padding: 20px;
+    width: 80 !important;
+    
+}
 
 
 /*====================控件样式================================*/

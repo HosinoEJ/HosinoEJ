@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "fs": "^0.0.1-security",
+    "marked": "4.3.0",
+    "path": "^0.12.7",
+    "serverless-http": "^3.2.0"
+  },
+  "scripts": {
+    "start": "node api/index.js",
+    "build": "echo 'Building...'",
+    "dev": "node api/index.js"
+  }
+}

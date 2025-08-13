@@ -7,24 +7,29 @@
 */
 
 
-const typedtextElement = document.getElementById("IndexTitle");
-const typedtextOutputElement = document.getElementById("outPut");
-let charIndex = 0;
-let text = typedtextElement.innerHTML;
+document.addEventListener("DOMContentLoaded", function() {
+    const typedtextElement = document.getElementById("IndexTitle");
+    const typedtextOutputElement = document.getElementById("outPut");
+    
+    if (!typedtextElement || !typedtextOutputElement) {
+        console.error("元素未找到！");
+        return;
+    }
 
-typedtextElement.style.display = "none";
+    let charIndex = 0;
+    let text = typedtextElement.innerHTML;
+    typedtextElement.style.display = "none";
 
-function typeText() {
-    if (charIndex < text.length) {
-        typedtextOutputElement.innerHTML = text.substring(0, charIndex + 1) + '<span class="cursor"></span>'; // 加入光標
-        charIndex++;
-        setTimeout(typeText, 50);
-    } else {
-        // 打字完成後移除光標
-        if(typedtextOutputElement.querySelector('.cursor')){
-            typedtextOutputElement.querySelector('.cursor').remove();
+    function typeText() {
+        if (charIndex < text.length) {
+            typedtextOutputElement.innerHTML = text.substring(0, charIndex + 1) + '<span class="cursor"></span>';
+            charIndex++;
+            setTimeout(typeText, 50);
+        } else {
+            const cursor = typedtextOutputElement.querySelector('.cursor');
+            if (cursor) cursor.remove();
         }
     }
-}
 
-typeText();
+    typeText();
+});

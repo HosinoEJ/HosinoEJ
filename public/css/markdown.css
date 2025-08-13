@@ -1,0 +1,70 @@
+#markdown-source { display: none; }/* 隐藏原始 Markdown 源码区域 */
+
+#markdown table {
+    border-collapse: collapse;
+    margin: 1em 0;
+}
+#markdown th, #markdown td {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 6px 12px;
+    text-align: left;
+}
+#markdown th {
+    background: rgb(175, 175, 175);
+}
+#markdown blockquote {
+    border-left: 4px solid #ccc;
+    margin: 1em 0;
+    width: 50%;
+    padding: 0.5em 1em;
+    color: #333333;
+    background: #f9f9f9a8;
+    border-radius: 10px 30px 30px 10px;
+}
+#markdown pre {
+    background: #272822;
+    color: #f8f8f2;
+    padding: 1em;
+    border-radius: 10px 30px 30px 10px; 
+    overflow-x: auto;
+}
+#markdown code {
+    background: #272822;
+    color: #00cd08;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-family: 'Consolas', 'Monaco', monospace;
+}
+#markdown pre code {
+    background-color: #ffffff00;
+}
+#markdown ul, #markdown ol {
+    margin: 1em 0 1em 2em;
+}
+#markdown li.task-list {
+    list-style: none;
+}
+#markdown input[type="checkbox"] {
+    margin-right: 0.5em;
+}
+#markdown hr {
+    border: none;
+    border-top: 4px solid #6b6b6b;
+    margin: 2em 0;
+}
+#markdown img {
+    max-width: 100%;
+    height: auto;
+    margin: 0.5em 0;
+}
+#markdown p {
+    margin: 1em 0;
+    line-height: 1.6;
+}
+
+@media(max-aspect-ratio: 1/1) {
+    #markdown {
+        font-size: 400%;
+    }
+}
