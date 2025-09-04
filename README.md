@@ -10,7 +10,10 @@
   
 :rainbow_flag: [**支持 LGBTQIA+ 平权!**](https://github.com/LGBT-CN/LGBTQIA-in-China/)
 
-**[查看我的個人網站](https://hsnej.fun)
+**[查看我的個人網站](https://hosinoej.github.io/HSNEJ-backup/)
+
+[個人網站備用地址：hosinoej.github.io/HSNEJ-backup](https://hosinoej.github.io/HSNEJ-backup/)
+
 [YouTube](https://youtube.com/@HosinoEJ)**
 
 ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=HosinoEJ&layout=compact&icon_color=0366d6&theme=white)
