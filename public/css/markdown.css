@@ -52,11 +52,13 @@
     border: none;
     border-top: 4px solid #6b6b6b;
     margin: 2em 0;
+    border-radius: 9px;
 }
 #markdown img {
     max-width: 100%;
     height: auto;
     margin: 0.5em 0;
+    border-radius: 10px;
 }
 #markdown p {
     margin: 1em 0;
