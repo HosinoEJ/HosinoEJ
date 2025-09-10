@@ -75,6 +75,34 @@ body.scrolling-down header {
     backdrop-filter: blur(10px);
 }
 
+
+#mouth, #context {
+    position: absolute;
+    z-index: 1000;
+    pointer-events: none; /* 讓鼠標可以穿透 */
+}
+#mouth {
+    opacity: 0;
+    width: 25px;
+    height: 25px;
+
+}
+.mouth-show{
+    animation: show_mouth 2s ease-out;
+}
+@keyframes show_mouth {
+    0%{
+        opacity: 0;
+    }
+    30%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+#context { background: rgba(0,0,255,0.5); }
+
 /*字體全局設定*/
 @font-face {
     font-family: 'zh-tw';

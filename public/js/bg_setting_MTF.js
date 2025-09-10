@@ -1,12 +1,9 @@
 document.addEventListener('click',(e) =>{
     const goLink = document.querySelectorAll('.LinkNoAmi');
-    const mtf = document.getElementsByClassName('color-bar')
+    const mtf = document.getElementsByClassName('color-bar');
     const target = e.target.closest('a,button');
     const main = document.querySelector('.main');
-    if(!target){
-        console.log("TOUCH")
-        return;
-    }
+    if(!target) return;
     e.preventDefault();
     if (Array.from(goLink).includes(target)) return;
     const href = target.href; // 取得連結地址

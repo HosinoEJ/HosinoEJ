@@ -12,7 +12,7 @@
         transform: translateY(-100%) rotate(0deg);
         animation: slide 1.5s ease forwards;
     }
-    .golink{animation-direction: reverse;}
+    .LinkNoAmi{animation-direction: reverse;}
     .bar-1 {
         background-color: #5bcffa; /* 蓝色 */
         animation-delay: 0.1s;

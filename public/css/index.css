@@ -1,7 +1,7 @@
 /*這裏是主頁特有的css代碼，其他頁面不調用（除非頁面直接由index.html移植而來）*/
 .main-title{
     position:fixed;
-    z-index:0;
+    z-index:1;
     top:0;
     left:0;
     width:100%;
@@ -57,6 +57,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    z-index: 2;
 }
 .Text-content #markdown{/*主界面文字内容容器*/
     padding: 20px 20px;
