@@ -7,6 +7,7 @@
             flex-direction: column;
             align-items: flex-start;
             width: 80%;
+            margin: 0 auto;
         }
         h2 {
             width: 100% !important;
@@ -18,17 +19,20 @@
     </style></head>
     <body><!--class="center_PG"的意思是讓這個頁面居中對齊，否則自己用display設定版面（可選）-->
         <%- include('partials/MTF') %>
-        <%- include('partials/header') %>
-        <section class="list">
-            <% reports.forEach(report => { %>
-                <h2 class="DivStyle-Glass">
-                    <a href="/port/<%= report.filenames %>">
-                        <%= report.title %> (發佈日期：<%= report.time %>，語言：<%= report.language %>)
-                    </a>
-                </h2>
-            <% }) %>
-        </section>
-        <%- include('partials/footer') %>
+        <main class="main">
+            <%- include('partials/header') %>
+            <section class="list">
+                <% reports.forEach(report => { %>
+                    <h2 class="DivStyle-Glass">
+                        <a href="/port/<%= report.filenames %>">
+                            <%= report.title %>
+                        </a><br>
+                        發佈日期：<%= report.time %>，語言：<%= report.language %>
+                    </h2>
+                <% }) %>
+            </section>
+            <%- include('partials/footer') %>
+        </main>
         <%- include('partials/footer_JS') %>
     </body>
 </html>

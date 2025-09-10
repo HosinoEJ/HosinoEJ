@@ -38,18 +38,21 @@
         left: 80%;
     }
     @keyframes slide {
-        form {transform: translateY(-100%) rotate(0deg);}
+        from {transform: translateY(-100%) rotate(0deg);}
         to {transform: translateY(0) rotate(0deg);}
     }
 
 
-    .content-visible {
+    .main {
         opacity: 0;
         animation: fadeIn 1s ease-out forwards;
         animation-delay: 1.4s; /* 等待色条动画结束 */
     }
     @keyframes fadeIn {
         from { opacity: 0; }
-        to { opacity: 1; }
+        to {
+            opacity: 1;
+            backdrop-filter: blur(5px);
+        }
     }
 }
