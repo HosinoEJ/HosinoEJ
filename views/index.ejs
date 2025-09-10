@@ -5,37 +5,38 @@
         <link rel="stylesheet" href="css/index.css"/><!--主页特有（喜-->
     </head>
     <body>
-        <div id="link_animate"></div>
-        <div class="title-Placeholder"></div><!--占位-->
-        <div class="main-title">
-            <div class="title"><!--Title-->
-                <img class="indexIcon" width="100px" style="border-radius: 50%; margin: 0 25px;" 
-                    src="https://avatars.githubusercontent.com/u/177436503?v=4"/>
-                <div id="IndexTitle" style="opacity: 0;">歡迎來到星野榮治的個人網站</div><!--這裏本質上是看不見的，實際上爲了動畫，這些文字在下一行的id="output"顯示-->
-                <div id="outPut"></div><!--標題顯示-->
+        <%- include('partials/MTF') %>
+        <main>
+            <div class="title-Placeholder"></div><!--占位-->
+            <div class="main-title">
+                <div class="title"><!--Title-->
+                    <img class="indexIcon" width="100px" style="border-radius: 50%; margin: 0 25px;" 
+                        src="https://avatars.githubusercontent.com/u/177436503?v=4"/>
+                    <div id="IndexTitle" style="opacity: 0;">歡迎來到星野榮治的個人網站</div><!--這裏本質上是看不見的，實際上爲了動畫，這些文字在下一行的id="output"顯示-->
+                    <div id="outPut"></div><!--標題顯示-->
+                </div>
+                <div class="main_2">我即便到了網上也不會有人注意到我......</div><!--副标题,修改请前往template.html-->
+                <%- include('partials/index-link') %>
             </div>
-            <div class="main_2">我即便到了網上也不會有人注意到我......</div><!--副标题,修改请前往template.html-->
-            <%- include('partials/index-link') %>
-        </div>
 
-        <div class="Text-content">
-            <div id="markdown" class="DivStyle-Glass" data-animate-on-scroll-Right><%- renderMarkdown('selfIntroduction') %></div>
-            <div id="markdown" class="DivStyle-Glass" data-animate-on-scroll-Left>
-                <section class="list">
-                    <h1>文章和報告</h1>
-                    
-                    <% reports.forEach(report => { %>
-                        <h2>
-                            <a href="/port/<%= report.filenames %>"><%= report.title %></a>
-                        </h2>
-                    <% }) %>
-                    <a href="/port-list" class="button1">查看更多</a>
-                </section>
+            <div class="Text-content">
+                <div id="markdown" class="DivStyle-Glass" data-animate-on-scroll-Right><%- renderMarkdown('selfIntroduction') %></div>
+                <div id="markdown" class="DivStyle-Glass" data-animate-on-scroll-Left>
+                    <section class="list">
+                        <h1>文章和報告</h1>
+                        
+                        <% reports.forEach(report => { %>
+                            <h2>
+                                <a href="/port/<%= report.filenames %>"><%= report.title %></a>
+                            </h2>
+                        <% }) %>
+                        <a href="/port-list" class="button1">查看更多</a>
+                    </section>
+                </div>
+                <div id="markdown" class="DivStyle-Glass" data-animate-on-scroll-Right><%- renderMarkdown('projecting') -%></div>
+                <div id="markdown" class="DivStyle-Glass" data-animate-on-scroll-Left><%- renderMarkdown('socialMediaAccounts') %></div>
             </div>
-            <div id="markdown" class="DivStyle-Glass" data-animate-on-scroll-Right><%- renderMarkdown('projecting') -%></div>
-            <div id="markdown" class="DivStyle-Glass" data-animate-on-scroll-Left><%- renderMarkdown('socialMediaAccounts') %></div>
-        </div>
-        <%- include('partials/bg-setting') %>
+        </main>
         <%- include('partials/footer') %>
         <%- include('partials/footer_JS') %>
     </body>

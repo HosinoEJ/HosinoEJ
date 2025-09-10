@@ -17,8 +17,7 @@
         }
     </style></head>
     <body><!--class="center_PG"的意思是讓這個頁面居中對齊，否則自己用display設定版面（可選）-->
-        
-        <div id="link_animate"></div><!--這是重定向動畫的遮罩（强制擁有）-->
+        <%- include('partials/MTF') %>
         <%- include('partials/header') %>
         <section class="list">
             <% reports.forEach(report => { %>
@@ -29,7 +28,6 @@
                 </h2>
             <% }) %>
         </section>
-        <%- include('partials/bg-setting') %>
         <%- include('partials/footer') %>
         <%- include('partials/footer_JS') %>
     </body>

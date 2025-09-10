@@ -1,11 +1,4 @@
-fetch('../template.html')
-.then(data => {
-  // 初始化背景設定（如果有對應元件）
-  if (document.querySelector('#bgColorPicker')) {
-    initBgSetting(); // 定義於 bg_setting.js
-  }
 
-});
 
 
 (function () {
