@@ -10,11 +10,11 @@
   
 :rainbow_flag: [**支持 LGBTQIA+ 平权!**](https://github.com/LGBT-CN/LGBTQIA-in-China/)
 
-**[查看我的個人網站](https://hosinoej.github.io/HSNEJ-backup/)
+[查看我的個人網站](https://hosinoej.github.io/HSNEJ-backup/)
 
 [個人網站備用地址：hosinoej.github.io/HSNEJ-backup](https://hosinoej.github.io/HSNEJ-backup/)
 
-[YouTube](https://youtube.com/@HosinoEJ)**
+[YouTube](https://youtube.com/@HosinoEJ)
 
 ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=HosinoEJ&layout=compact&icon_color=0366d6&theme=white)
 
@@ -37,7 +37,7 @@ Ciallo！大家好，我是星野川，是一個就算到網路上也不會有�
 
 現在正在學習日語，計畫令和七年10月份考N2，令和八年4月計畫去日本留學。現在偶爾會給github的開源項目製作日本語翻譯
 
-謝絕加微信和QQ，但是可以加DISCORD。如果我們很熟悉的話可以加LINE或Whatsapp。
+謝絕加微信和QQ，但是可以加DISCORD。如果我們很熟悉的話可以加LINE或者Whatsapp或者Telegram。
 
 Bitcoin感謝投喂：**bc1psmmsscgms42g0s5xknvf85yy9evj7ftac3agk3v3zvfjun3n0hfsgqfnml**
 

@@ -85,7 +85,7 @@ function initBgSetting() {
       preloadNextRandomImg(img);
     }, 800);
   }
-
+/*
   function preloadNextRandomImg(img) {
     const preload = new Image();
     preload.onload = () => {
@@ -106,6 +106,7 @@ function initBgSetting() {
     clearTimeout(randomImgTimer);
     preloadNextRandomImg(img);
   }
+  */
 
   // === 初始化背景 ===
   if (savedType === 'image' && savedImage) {
