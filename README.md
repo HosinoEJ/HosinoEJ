@@ -48,6 +48,12 @@ Bitcoin感謝投喂：**bc1psmmsscgms42g0s5xknvf85yy9evj7ftac3agk3v3zvfjun3n0hfs
     <a target="_blank" href="https://github.com/HosinoEJ/HosinoEJ"><strong>Website</strong></a> • 
   </p>
 
+### 重要文章儲存地址
+
+[星の日記](https://github.com/HosinoEJ/HosinoEJ/blob/main/public/prot/20250708.zh-tw.TheJournalOf_STAR.md)
+
+[回憶錄](https://github.com/HosinoEJ/HosinoEJ/blob/main/public/prot/20250909.zh-tw.HosinoEJ%E7%9A%84%E5%9B%9E%E6%86%B6%E9%8C%84%EF%BC%9F.md)
+
 ### 項目一覽
 [LocalChat](https://github.com/HosinoEJ/LocalChat) 私密性~~也許~~很高的聊天軟體。
 
