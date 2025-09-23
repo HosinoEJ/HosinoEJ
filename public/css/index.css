@@ -77,20 +77,12 @@
 /* 当长宽比小于1:1时，使用另一种排版 */
 @media (max-aspect-ratio: 1/1){
     .title{
-        font-size: 600%;/*手机界面时调整字体（更大）*/
     }
     .indexIcon{/*手机界面时消失*/
         display: none;
     }
     .indexButton{
         margin: 20% 0 0;
-    }
-    .indexButton a{
-        width: 40%;
-        font-size: 250%;
-    }
-    #link_elseWeb{
-        font-size: 60px;
     }
 }
 
