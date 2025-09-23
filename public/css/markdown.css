@@ -73,3 +73,8 @@
         width: 100%;
     }
 }
+
+#markdown figcaption{
+    color: rgb(0 0 0 / 53%);
+    text-align: center;
+}
