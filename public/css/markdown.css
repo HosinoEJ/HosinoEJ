@@ -67,6 +67,9 @@
 
 @media(max-aspect-ratio: 1/1) {
     #markdown {
-        font-size: 400%;
+        font-size: 200%;
+    }
+    #markdown blockquote{
+        width: 100%;
     }
 }
