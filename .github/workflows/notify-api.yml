@@ -1,0 +1,42 @@
+name: Post File Changes to API
+
+on:
+  push:
+    branches:
+      - main
+    # 這個路徑下的檔案變動時，觸發 Workflow
+    paths:
+      - 'public/prot/**'
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Get changed files in public/prot
+        id: files
+        run: |
+          # 這裡加上了路徑過濾 "public/prot/"
+          # tr '\n' ',' 是將換行轉為逗號，方便 API 處理
+          ADDED=$(git diff --name-only --diff-filter=A HEAD^ HEAD -- "public/prot/" | tr '\n' ',' | sed 's/,$//')
+          MODIFIED=$(git diff --name-only --diff-filter=M HEAD^ HEAD -- "public/prot/" | tr '\n' ',' | sed 's/,$//')
+          
+          echo "added=$ADDED" >> $GITHUB_OUTPUT
+          echo "modified=$MODIFIED" >> $GITHUB_OUTPUT
+
+      - name: Send POST request to API
+        # 只有當真的有檔案變動時才發送（避免空字串發送）
+        if: steps.files.outputs.added != '' || steps.files.outputs.modified != ''
+        run: |
+          curl -X POST "https://uninvestigating-aidan-unconjectural.ngrok-free.dev/api/webhook" \
+          -H "Content-Type: application/json" \
+          -d '{
+            "project": "${{ github.repository }}",
+            "commit_id": "${{ github.sha }}",
+            "added_files": "${{ steps.files.outputs.added }}",
+            "modified_files": "${{ steps.files.outputs.modified }}"
+          }'

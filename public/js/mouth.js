@@ -1,3 +1,6 @@
+/*
+有點奇怪，先不用了
+
 const divA = document.getElementById('mouth');
 const divB = document.getElementById('context');
 
@@ -21,3 +24,4 @@ document.addEventListener('click',(e) => {
         mouth.classList.remove('mouth-show');
     },2000)
 });
+*/
