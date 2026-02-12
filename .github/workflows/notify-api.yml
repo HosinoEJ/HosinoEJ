@@ -29,14 +29,16 @@ jobs:
           echo "modified=$MODIFIED" >> $GITHUB_OUTPUT
 
       - name: Send POST request to API
-        # 只有當真的有檔案變動時才發送（避免空字串發送）
         if: steps.files.outputs.added != '' || steps.files.outputs.modified != ''
         run: |
-          curl -X POST "https://uninvestigating-aidan-unconjectural.ngrok-free.dev/api/webhook" \
+          # 使用 jq 構建安全的 JSON
+          payload=$(jq -n \
+            --arg project "${{ github.repository }}" \
+            --arg commit "${{ github.sha }}" \
+            --arg added "${{ steps.files.outputs.added }}" \
+            --arg modified "${{ steps.files.outputs.modified }}" \
+            '{project: $project, commit_id: $commit, added_files: $added, modified_files: $modified}')
+
+          curl -X POST "https://your-website.com/api/webhook" \
           -H "Content-Type: application/json" \
-          -d '{
-            "project": "${{ github.repository }}",
-            "commit_id": "${{ github.sha }}",
-            "added_files": "${{ steps.files.outputs.added }}",
-            "modified_files": "${{ steps.files.outputs.modified }}"
-          }'
+          -d "$payload"
