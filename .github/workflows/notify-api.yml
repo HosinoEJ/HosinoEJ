@@ -39,6 +39,6 @@ jobs:
             --arg modified "${{ steps.files.outputs.modified }}" \
             '{project: $project, commit_id: $commit, added_files: $added, modified_files: $modified}')
 
-          curl -X POST "https://your-website.com/api/webhook" \
+          curl -X POST "https://uninvestigating-aidan-unconjectural.ngrok-free.dev/api/webhook" \
           -H "Content-Type: application/json" \
           -d "$payload"
