@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh_tw"><!--這裏的lang可以控制字體的，相對來説重要一些-->
+    <%- include('partials/head') %>
+    <head>
+        <style>
+            body { font-family: 'PingFang TC', 'Microsoft JhengHei', sans-serif; background: #f9fafb; color: #374151; line-height: 1.6; }
+            .container { max-width: 900px; margin: 50px auto; padding: 0 20px; }
+            .header { text-align: center; margin-bottom: 40px; }
+            
+            /* 網格佈局 */
+            .links-grid { 
+                display: grid; 
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+                gap: 20px; 
+            }
+
+            /* 卡片樣式 */
+            .link-card {
+                padding: 20px;
+                text-decoration: none;
+                transition: transform 0.2s, box-shadow 0.2s;
+                display: flex;
+                align-items: center;
+            }
+            .link-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            }
+
+            .info h3 { margin: 0; font-size: 1.1rem; color: #111827; }
+            .info p { margin: 5px 0 0; font-size: 0.85rem; color: #6b7280; }
+
+            /* 申請說明區塊 */
+            .apply-section {
+                margin-top: 50px;
+                padding: 30px;
+                border-radius: 12px;
+            }
+        </style>
+    </head>
+    <body><!--class="center_PG"的意思是讓這個頁面居中對齊，否則自己用display設定版面（可選）-->
+        
+            <%- include('partials/MTF') %>
+            <main class="main">
+                <%- include('partials/header') %>
+                <div class="container">
+                    <div class="header">
+                        <h1>友情鏈接</h1>
+                        <p>歡迎所有星野醬的好朋友喵（後宮）</p>
+                    </div>
+                    <div class="links-grid">
+                        
+                            <% friends.forEach(friend => { %>
+                                <a href="<%= friend.url %>" target="_blank" class="link-card friend-card DivStyle-Glass">
+                                    <img src="<%= friend.avatar %>" style="width: 60px; height: 60px; border-radius: 50%; margin-right: 15px; border: 2px solid <%= friend.color %>;">
+                                    <div class="info">
+                                        <h3 id="<%= friend.color %>" style="margin: 0; font-size: 1.1rem;"><%= friend.name %></h3>
+                                        <p style="margin: 5px 0 0; font-size: 0.85rem; opacity: 0.7;"><%= friend.desc %></p>
+                                    </div>
+                                </a>
+                            <% }); %>
+                        
+                    </div>
+
+                    <div class="apply-section" id="DivStyle-Glass">
+                        <h3>申請交換友鏈</h3>
+                        <p>如果你也想交換鏈接。請在你的網站添加本站後，通過<a href="mailto:hosinoeiji@gmail.com">郵件</a>告訴我：</p>
+                        <ul>
+                            <li><strong>名稱：</strong> 我的網站名稱</li>
+                            <li><strong>網址：</strong> https://yourdomain.com</li>
+                            <li><strong>描述：</strong> 一句話介紹你的網站</li>
+                            <li><strong>頭像：</strong> 公網可訪問的圖片鏈接</li>
+                            <li><strong>大頭照顏色（敬請期待）</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </main>
+            <%- include('partials/footer') %>
+        <%- include('partials/footer_JS') %>
+    </body>
+</html>
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>友情鏈接 - 我的網站</title>
+    
+</head>
+<body>
+
+<div >
+    
+
+    
+</div>
+
+</body>
+</html>

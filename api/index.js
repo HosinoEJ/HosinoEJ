@@ -78,10 +78,46 @@ function getReports() {
   });
 }
 
+function getWeightedRandomFromH2() {
+  const filePath = path.join(__dirname, '..', 'public', 'md', 'h2.md');
+  if (!fs.existsSync(filePath)) return '';
+
+  const content = fs.readFileSync(filePath, 'utf-8');
+  
+  // 1. 以 "# " 作為分隔符切割（注意處理換行）
+  // split 後的第一項可能是空字串，過濾掉並補回 "# " 符號或純文字
+  const lines = content.split(/\r?\n/)
+                       .map(line => line.trim())
+                       .filter(line => line.length > 0);
+
+  if (lines.length === 0) return '';
+
+  // 2. 加權隨機：越往後的索引，權重越大
+  const n = lines.length;
+  const totalWeight = (n * (n + 1)) / 2;
+  let random = Math.random() * totalWeight;
+
+  let selectedLine = lines[n - 1]; // 預設最後一條
+  for (let i = 0; i < n; i++) {
+    const weight = i + 1;
+    if (random < weight) {
+      selectedLine = lines[i];
+      break;
+    }
+    random -= weight;
+  }
+
+  // 3. 將選中的那一行 Markdown 轉為 HTML 並淨化
+  const rawHtml = marked.parse(selectedLine);
+  return sanitizeHtml(rawHtml);
+}
+
+
 // 主页路由
 app.get('/', (req, res) => {
   const reports = getReports();
-  res.render('index', { title: '主頁', t: req.t, reports });
+  const randomH2Html = getWeightedRandomFromH2();
+  res.render('index', { title: '主頁', t: req.t, randomH2Html, reports});
 });
 
 // 报告列表路由（合并重复定义）
@@ -99,6 +135,26 @@ app.get('/port', (req, res) => {
     t: req.t
   });
 });
+
+
+app.get('/friends',(req,res) => {//友情鏈接
+
+  let friendsData = { friends: [] };
+    try {
+        const jsonPath = path.join(__dirname,'..', 'public', 'friends.json');
+        const rawData = fs.readFileSync(jsonPath, 'utf8');
+        friendsData = JSON.parse(rawData);
+    } catch (err) {
+        console.error("讀取友鏈史山出錯：", err);
+  }
+
+  res.render('friends',{
+    title: '友情鏈接',
+    t:req.t,
+    friends: friendsData.friends
+  })
+})
+
 
 // 单个报告路由
 app.get('/port/:id', (req, res) => {
