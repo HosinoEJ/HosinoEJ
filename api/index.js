@@ -6,6 +6,7 @@ const serverless = require('serverless-http');
 // 引入DOMPurify和jsdom用于HTML净化
 const DOMPurify = require('dompurify');
 const { JSDOM } = require('jsdom');
+const { title } = require('process');
 
 // 初始化DOMPurify
 const window = new JSDOM('').window;
@@ -26,6 +27,8 @@ renderer.image = (href, title, text) => {
     </figure>
   `;
 };
+
+const title_F = 'HosinoNeko';
 
 // 配置marked选项（移除了sanitize）
 marked.setOptions({
@@ -117,23 +120,20 @@ function getWeightedRandomFromH2() {
 app.get('/', (req, res) => {
   const reports = getReports();
   const randomH2Html = getWeightedRandomFromH2();
-  res.render('index', { title: '主頁', t: req.t, randomH2Html, reports});
+  res.render('index', { title: `${title_F}|主頁`, t: req.t, randomH2Html, reports});
 });
+
+app.get('/hosinoneko',(req,res) => {
+  res.render('hosinoneko' , {
+    title: `${title_F}|一個...彩蛋？`,
+    t:req.t
+  })
+})
 
 // 报告列表路由（合并重复定义）
 app.get('/port-list', (req, res) => {
   const reports = getReports();
-  res.render('port-list', { reports, t: req.t });
-});
-
-// 报告页面路由
-app.get('/port', (req, res) => {
-  const reports = getReports();
-  res.render('port', { 
-    reports, 
-    title: '文章列表',
-    t: req.t
-  });
+  res.render('port-list', { reports, t: req.t, title:`${title_F}|文章列表` });
 });
 
 
@@ -145,11 +145,11 @@ app.get('/friends',(req,res) => {//友情鏈接
         const rawData = fs.readFileSync(jsonPath, 'utf8');
         friendsData = JSON.parse(rawData);
     } catch (err) {
-        console.error("讀取友鏈史山出錯：", err);
+        console.error("讀取友鏈出錯：", err);
   }
 
   res.render('friends',{
-    title: '友情鏈接',
+    title: `${title_F}|友情鏈接`,
     t:req.t,
     friends: friendsData.friends
   })
@@ -179,7 +179,7 @@ app.get('/port/:id', (req, res) => {
     html: sanitizeHtml(rawHtml)
   };
   
-  res.render('port', { reports: [report], t: req.t });
+  res.render('port', { reports: [report], t: req.t, title:`${title_F}|${title}` });
 });
 
 // 启动服务器

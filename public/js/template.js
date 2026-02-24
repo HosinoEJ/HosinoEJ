@@ -11,7 +11,7 @@
         timestamp: Date.now(),
     }));
     // 跳转到 hsnej.html
-    window.location.href = 'port/hsnej';
+    window.location.href = '/hosinoneko';
 };
 
 
