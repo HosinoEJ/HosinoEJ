@@ -57,29 +57,10 @@ app.use((req, res, next) => {
   next();
 });
 
-// 共用函数 - 获取报告
-function getReports() {
-  const protDir = path.join(__dirname, '..', 'public', 'prot');
-  if (!fs.existsSync(protDir)) return [];
-  
-  const files = fs.readdirSync(protDir).filter(f => f.endsWith('.md'));
-  return files.map(filename => {
-    const filenames = filename.replace('.md', '');
-    const [language, time, ...titleArr] = filenames.split('.');
-    const title = titleArr.join('.');
-    const content = fs.readFileSync(path.join(protDir, filename), 'utf-8');
-    const rawHtml = marked.parse(content);
-    
-    return { 
-      language, 
-      time, 
-      title, 
-      filenames, 
-      // 净化HTML
-      html: sanitizeHtml(rawHtml) 
-    };
-  });
-}
+
+
+
+
 
 function getWeightedRandomFromH2() {
   const filePath = path.join(__dirname, '..', 'public', 'md', 'h2.md');
@@ -116,12 +97,41 @@ function getWeightedRandomFromH2() {
 }
 
 
-// 主页路由
+//獲取prot的tag（api/data.json）
+const getPortTags = () => {
+    const data = fs.readFileSync(path.join(__dirname, 'data.json'), 'utf-8');
+    return JSON.parse(data);
+};
+
+
+
+
+// 主页路由INDEX!!!!!!!!!
 app.get('/', (req, res) => {
-  const reports = getReports();
-  const randomH2Html = getWeightedRandomFromH2();
-  res.render('index', { title: `${title_F}|主頁`, t: req.t, randomH2Html, reports});
+  const randomH2Html = getWeightedRandomFromH2();//副標題
+  const SavedTags = getPortTags();
+  const QTag = req.query.tag;//現在頁面的query tag是什麽
+  let filteredPort = SavedTags.Data;//篩選的數據
+
+  const AllTags = SavedTags.TagList;
+
+  if(QTag) filteredPort = SavedTags.Data.filter(p => p.tagid && p.tagid.includes(QTag));//篩選SavedTags裏面的tagid是Tag的
+
+
+  res.render('index', { 
+    SavedTags:filteredPort,//數據（已篩選）
+    QTag,//現在的query
+    AllTags,//所有tag的數據
+    t: req.t, 
+    randomH2Html,
+    title:`${title_F}|主頁` 
+  });
 });
+
+
+
+
+
 
 app.get('/hosinoneko',(req,res) => {
   res.render('hosinoneko' , {
@@ -130,30 +140,8 @@ app.get('/hosinoneko',(req,res) => {
   })
 })
 
-// 报告列表路由（合并重复定义）
-app.get('/port-list', (req, res) => {
-  const reports = getReports();
-  res.render('port-list', { reports, t: req.t, title:`${title_F}|文章列表` });
-});
 
 
-app.get('/friends',(req,res) => {//友情鏈接
-
-  let friendsData = { friends: [] };
-    try {
-        const jsonPath = path.join(__dirname,'..', 'public', 'friends.json');
-        const rawData = fs.readFileSync(jsonPath, 'utf8');
-        friendsData = JSON.parse(rawData);
-    } catch (err) {
-        console.error("讀取友鏈出錯：", err);
-  }
-
-  res.render('friends',{
-    title: `${title_F}|友情鏈接`,
-    t:req.t,
-    friends: friendsData.friends
-  })
-})
 
 
 // 单个报告路由
@@ -181,6 +169,31 @@ app.get('/port/:id', (req, res) => {
   
   res.render('port', { reports: [report], t: req.t, title:`${title_F}|${title}` });
 });
+
+
+
+
+
+app.get('/friends',(req,res) => {//友情鏈接
+
+  let friendsData = { friends: [] };
+    try {
+        const jsonPath = path.join(__dirname,'..', 'public', 'friends.json');
+        const rawData = fs.readFileSync(jsonPath, 'utf8');
+        friendsData = JSON.parse(rawData);
+    } catch (err) {
+        console.error("讀取友鏈出錯：", err);
+  }
+
+  res.render('friends',{
+    title: `${title_F}|友情鏈接`,
+    t:req.t,
+    friends: friendsData.friends
+  })
+})
+
+
+
 
 // 启动服务器
 if (process.env.VERCEL_ENV !== 'production') {

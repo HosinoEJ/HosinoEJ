@@ -76,8 +76,6 @@
 
 /* 当长宽比小于1:1时，使用另一种排版 */
 @media (max-aspect-ratio: 1/1){
-    .title{
-    }
     .indexIcon{/*手机界面时消失*/
         display: none;
     }
@@ -109,3 +107,24 @@
     100%{bottom: 20px;}
 }
 
+
+
+
+.list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 80%;
+    margin: 0 auto;
+}
+.tag{
+    display: flex;
+    justify-content: center;
+}
+.list_li {
+    width: 100% !important;
+    margin: 16px 0;
+    padding: 10px;
+    min-height: 120px;
+    
+}

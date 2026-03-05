@@ -40,7 +40,7 @@ html[lang="ja_jp"] body {
     backdrop-filter: blur(5px); /*毛玻璃效果*/
     box-shadow: 0 0 16px rgba(0, 0, 0, 0.5);
     border-radius: 30px;
-    background-color: #ffffff28;
+    background-color: #ffffff;
     word-wrap: break-word;
 }
 header {
@@ -221,7 +221,7 @@ opacity: 1;
 }
 .button1:active {
     transform: scale(0.8);
-  }
+}
 
 
 /*链接文本1   (<a href="#" class="LinkText1")*/

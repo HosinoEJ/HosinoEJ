@@ -2,35 +2,52 @@
 <html lang="zh_tw"><!--這裏的lang可以控制字體的，相對來説重要一些-->
     <%- include('partials/head') %>
     <head><style>
-        .list {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            width: 80%;
-            margin: 0 auto;
-        }
-        h2 {
-            width: 100% !important;
-            margin: 16px 0;
-            padding: 10px;
-            min-height: 120px;
-            
-        }
+        
     </style></head>
     <body><!--class="center_PG"的意思是讓這個頁面居中對齊，否則自己用display設定版面（可選）-->
         <%- include('partials/MTF') %>
         <main class="main">
             <%- include('partials/header') %>
-            <section class="list">
-                <% reports.forEach(report => { %>
-                    <h2 class="DivStyle-Glass">
-                        <a href="/port/<%= report.filenames %>">
-                            <%= report.title %>
-                        </a><br>
-                        發佈日期：<%= report.time %>，語言：<%= report.language %>
-                    </h2>
+
+
+
+            <section class="tag">
+                <a class="button <%= !QTag ? 'active' : '' %>" href="/port-list">全部</a>
+                <% const keys = Object.keys(AllTags); %>
+                <% keys.forEach(function(id) { %>
+                    <% const name = AllTags[id]; %>
+                    <a class="button <%= !QTag ? 'active' : '' %>" href="/port-list?tag=<%- id %>">#<%- name %></a>
                 <% }) %>
             </section>
+            <section class="list">
+                <% if (SavedTags.length > 0){%>
+                    <% SavedTags.forEach(Prot =>{%>
+                        <div class="DivStyle-Glass">
+                            <h2><a href="/port/<%= Prot.filename %>"><%= Prot.title %></a></h2>
+                            <p>作者：<%= Prot.author%></p>
+                            <p>創稿日期：<%= Prot.CreationDate%></p>
+                            <p>語言：<%= Prot.Language%></p>
+                            <p>
+                                <% if (Prot.tagid && Prot.tagid.length > 0) { %>
+                                    <% Prot.tagid.forEach(id => { %>
+                                        <span class="tag-label">#<%= AllTags[id] %> </span>
+                                    <% }) %>
+                                <% } else { %>
+                                    #無標籤
+                                <% } %>
+                            </p>
+                        </div>
+                    <%})%>
+                <%} else {%>
+                    <h3>暫時還沒有文章喵~</h3>
+                    <p>看點別的？</p>
+                    <a href="https://github.com/HosinoEJ"></a>
+                <%}%>
+            </section>
+
+
+
+
         </main>
         <%- include('partials/footer') %>
         <%- include('partials/footer_JS') %>
