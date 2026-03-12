@@ -148,7 +148,7 @@ app.get('/port/:id', (req, res) => {
   
   const content = fs.readFileSync(mdPath, 'utf-8');
   const [language, time, ...titleArr] = mdName.split('.');
-  const title = titleArr.join('.');
+  const title = mdName//titleArr.join('.');
   const rawHtml = marked.parse(content);
   
   const report = {
