@@ -3,7 +3,8 @@
     "1": "日記",
     "2": "教程",
     "3": "回憶錄",
-    "4": "技術/工具"
+    "4": "技術/工具",
+    "5": "法律"
   },
   "Data": [
     {
@@ -12,7 +13,9 @@
       "CreationDate": "2025年7月8日",
       "Language": "正體中文",
       "filename": "TheJournalOf_STAR",
-      "tagid": ["1"]
+      "tagid": [
+        "1"
+      ]
     },
     {
       "title": "HosinoNeko的回憶錄",
@@ -20,7 +23,10 @@
       "CreationDate": "2025年9月9日",
       "Language": "正體中文",
       "filename": "20250909.zh-tw.HosinoNeko的回憶錄",
-      "tagid": ["1", "3"]
+      "tagid": [
+        "1",
+        "3"
+      ]
     },
     {
       "title": "小貓和星星",
@@ -28,7 +34,9 @@
       "CreationDate": "2025年9月13日",
       "Language": "正體中文",
       "filename": "20250913.zh-tw.小貓和星星",
-      "tagid": ["1"]
+      "tagid": [
+        "1"
+      ]
     },
     {
       "title": "HosinoEJ的MAIL發射器",
@@ -36,7 +44,10 @@
       "CreationDate": "2025年9月19日",
       "Language": "正體中文",
       "filename": "20250919.zh-tw.HosinoEJ的MAIL發射器",
-      "tagid": ["2", "4"]
+      "tagid": [
+        "2",
+        "4"
+      ]
     },
     {
       "title": "我要RLE？",
@@ -44,7 +55,9 @@
       "CreationDate": "2025年9月23日",
       "Language": "正體中文",
       "filename": "20250923.zh_tw.我要RLE？",
-      "tagid": ["1"]
+      "tagid": [
+        "1"
+      ]
     },
     {
       "title": "如何免費創建一個網站",
@@ -52,7 +65,19 @@
       "CreationDate": "2025年9月25日",
       "Language": "正體中文",
       "filename": "20250925.星空ミャウ.如何免費創建一個網站",
-      "tagid": ["2"]
+      "tagid": [
+        "2"
+      ]
+    },
+    {
+      "title": "關於心種子教育違法辦學的通告",
+      "author": "HosinoNeko",
+      "CreationDate": "2026年3月13日",
+      "Language": "正體中文",
+      "filename": "關於心種子教育違法辦學的通告",
+      "tagid": [
+        "5"
+      ]
     }
   ]
 }

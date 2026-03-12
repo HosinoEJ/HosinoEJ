@@ -1,3 +1,4 @@
+const iconUrl = 'https://avatars.githubusercontent.com/u/177436503?v=4';
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
@@ -57,11 +58,6 @@ app.use((req, res, next) => {
   next();
 });
 
-
-
-
-
-
 function getWeightedRandomFromH2() {
   const filePath = path.join(__dirname, '..', 'public', 'md', 'h2.md');
   if (!fs.existsSync(filePath)) return '';
@@ -96,12 +92,14 @@ function getWeightedRandomFromH2() {
   return sanitizeHtml(rawHtml);
 }
 
-
 //獲取prot的tag（api/data.json）
 const getPortTags = () => {
     const data = fs.readFileSync(path.join(__dirname, 'data.json'), 'utf-8');
     return JSON.parse(data);
 };
+
+
+
 
 
 
@@ -117,6 +115,7 @@ app.get('/', (req, res) => {
 
   if(QTag) filteredPort = SavedTags.Data.filter(p => p.tagid && p.tagid.includes(QTag));//篩選SavedTags裏面的tagid是Tag的
 
+  
 
   res.render('index', { 
     SavedTags:filteredPort,//數據（已篩選）
@@ -124,25 +123,18 @@ app.get('/', (req, res) => {
     AllTags,//所有tag的數據
     t: req.t, 
     randomH2Html,
-    title:`${title_F}|主頁` 
+    title:`${title_F}|主頁`,
+    iconUrl
   });
 });
-
-
-
-
-
 
 app.get('/hosinoneko',(req,res) => {
   res.render('hosinoneko' , {
     title: `${title_F}|一個...彩蛋？`,
-    t:req.t
+    t:req.t,
+    iconUrl
   })
 })
-
-
-
-
 
 // 单个报告路由
 app.get('/port/:id', (req, res) => {
@@ -167,12 +159,8 @@ app.get('/port/:id', (req, res) => {
     html: sanitizeHtml(rawHtml)
   };
   
-  res.render('port', { reports: [report], t: req.t, title:`${title_F}|${title}` });
+  res.render('port', { reports: [report], t: req.t, title:`${title_F}|${title}`,iconUrl });
 });
-
-
-
-
 
 app.get('/friends',(req,res) => {//友情鏈接
 
@@ -188,12 +176,10 @@ app.get('/friends',(req,res) => {//友情鏈接
   res.render('friends',{
     title: `${title_F}|友情鏈接`,
     t:req.t,
-    friends: friendsData.friends
+    friends: friendsData.friends,
+    iconUrl
   })
 })
-
-
-
 
 // 启动服务器
 if (process.env.VERCEL_ENV !== 'production') {

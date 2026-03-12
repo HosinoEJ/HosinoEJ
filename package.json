@@ -13,6 +13,7 @@
   "scripts": {
     "start": "node api/index.js",
     "build": "echo 'Building...'",
-    "dev": "node api/index.js"
+    "dev": "node api/index.js",
+    "portset": "node api/portsetting.js"
   }
 }

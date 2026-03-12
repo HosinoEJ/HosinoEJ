@@ -1,0 +1,111 @@
+<h3>未在資料庫的檔案 (<%= unregistered.length %>)</h3>
+<ul>
+    <% unregistered.forEach(file => { %>
+        <li>
+            <%= file %> 
+            <button onclick="openAddModal('<%= file %>')">入庫</button>
+        </li>
+    <% }) %>
+</ul>
+
+<dialog id="addModal" style="padding: 20px; border-radius: 8px; border: 1px solid #ccc; width: 400px;">
+    <form id="dataForm" action="/AddData" method="POST">
+        <h3 id="modal_header">新增文章數據</h3>
+        
+        <label>檔案名稱 (唯讀)：</label><br>
+        <input type="text" id="modal_filename" name="filename" readonly style="background:#eee;"><br><br>
+
+        <label>文章標題：</label><br>
+        <input type="text" id="modal_title" name="title" required><br><br>
+
+        <label>作者：</label><br>
+        <input type="text" id="modal_author" name="author" value="HosinoNeko"><br><br>
+
+        <label>標籤 (用逗號隔開)：</label><br>
+        <input type="text" id="modal_tags" name="tagids" placeholder="1, 2"><br><br>
+
+        <div style="text-align: right;">
+            <button type="button" onclick="document.getElementById('addModal').close()">取消</button>
+            <button type="submit" id="modal_submit_btn">確認儲存</button>
+        </div>
+    </form>
+</dialog>
+
+
+
+<hr>
+
+<table>
+    <% tag.Data.forEach(item => { %>
+    <tr>
+        <td><%= item.title %></td>
+        <td>
+            <button onclick="editItem('<%= item.filename %>', '<%= item.title %>', '<%= item.tagid.join(',') %>')">
+                修改元數據
+            </button>
+        </td>
+    </tr>
+    <% }) %>
+</table>
+
+<script>
+    const modal = document.getElementById('addModal');
+    const form = document.getElementById('dataForm');
+    const header = document.getElementById('modal_header');
+
+    // 狀態 A：入庫 (Add)
+    function openAddModal(filename) {
+        header.innerText = "新增入庫";
+        form.action = "/AddData"; // 切換提交目標
+        document.getElementById('modal_filename').value = filename.replace('.md', '');
+        document.getElementById('modal_title').value = filename.replace('.md', '');
+        document.getElementById('modal_tags').value = "";
+        modal.showModal();
+    }
+
+    // 狀態 B：修改 (Edit)
+    function editItem(fname, title, tags) {
+        header.innerText = "修改元數據";
+        form.action = "/UpdateData"; // 切換提交目標
+        document.getElementById('modal_filename').value = fname;
+        document.getElementById('modal_title').value = title;
+        document.getElementById('modal_tags').value = tags; 
+        modal.showModal();
+    }
+</script>
+
+
+<button onclick="cleanDatabase()" style="background: #dc3545; color: white; border: none; padding: 5px 10px; cursor: pointer;">
+    清理失效記錄
+</button>
+
+<script>
+async function cleanDatabase() {
+    if (!confirm('確定要刪除所有找不到對應 .md 檔案的資料庫記錄嗎？此操作不可逆。')) return;
+
+    try {
+        const response = await fetch('/CleanData', { method: 'POST' });
+        const result = await response.json();
+        
+        if (result.success) {
+            alert(result.message);
+            location.reload(); // 成功後刷新頁面
+        } else {
+            alert('錯誤: ' + result.message);
+        }
+    } catch (error) {
+        alert('發送請求失敗');
+    }
+}
+</script>
+
+
+<script>
+    function openAddModal(filename) {
+        const modal = document.getElementById('addModal');
+        // 自動填入檔名（去掉 .md）
+        document.getElementById('modal_filename').value = filename.replace('.md', '');
+        document.getElementById('modal_title').value = filename.replace('.md', '');
+        modal.showModal(); // 顯示彈窗
+    }
+</script>
