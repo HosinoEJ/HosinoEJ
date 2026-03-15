@@ -36,7 +36,7 @@
                 <% const keys = Object.keys(AllTags); %>
                 <% keys.forEach(function(id) { %>
                     <% const name = AllTags[id]; %>
-                    <a class="button" href="/port-list?tag=<%- id %>">#<%- name %></a>
+                    <a class="button" href="/?tag=<%- id %>">#<%- name %></a>
                 <% }) %>
             </section>
             <section class="list">
