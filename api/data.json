@@ -4,7 +4,9 @@
     "2": "教程",
     "3": "回憶錄",
     "4": "技術/工具",
-    "5": "法律"
+    "5": "法律",
+    "6": "更新",
+    "7": "NoTorsion"
   },
   "Data": [
     {
@@ -77,6 +79,17 @@
       "filename": "關於心種子教育違法辦學的控告",
       "tagid": [
         "5"
+      ]
+    },
+    {
+      "title": "NoTorsion地圖更新，第一個正式版",
+      "author": "HosinoNeko",
+      "CreationDate": "2026年3月16日",
+      "Language": "正體中文",
+      "filename": "update_notorsion",
+      "tagid": [
+        "6",
+        "7"
       ]
     }
   ]
