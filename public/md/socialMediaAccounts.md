@@ -4,4 +4,4 @@
 ### 3. [GitHub](https://github.com/HosinoEJ)
 ### 4. [Discord](https://reurl.cc/8Dz8d7)
 ### 5. [Bilibili](https://space.bilibili.com/1140685131)
-### 6. [mail](mailto:hosinoeiji@gmail.com)
+### 6. [E-mail](mailto:contact@hosinoneko.me)
