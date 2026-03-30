@@ -3,7 +3,7 @@
     <%- include('partials/header') %>
     <%- include('partials/banner') %>
 
-    <section class="tag">
+    <section class="tag div">
         <a class="button" href="/port-list">全部</a>
         <% const keys = Object.keys(AllTags); %>
         <% keys.forEach(function(id) { %>
@@ -12,31 +12,37 @@
         <% }) %>
     </section>
 
-    <% if (SavedTags.length > 0){%>
-        <% SavedTags.forEach(Prot =>{%>
-            <a class="" href="/port/<%= Prot.filename %>">
-                <h2><%= Prot.title %></h2>
-                <p>作者：<%= Prot.author%></p>
-                <p>創稿日期：<%= Prot.CreationDate%></p>
-                <p>語言：<%= Prot.Language%></p>
-                <p>
-                    <% if (Prot.tagid && Prot.tagid.length > 0) { %>
-                        <% Prot.tagid.forEach(id => { %>
-                            <span class="tag-label">#<%= AllTags[id] %> </span>
-                        <% }) %>
-                    <% } else { %>
-                        #無標籤
-                    <% } %>
-                </p>
-            </a>
-        <%})%>
-    <%} else {%>
-        <h3>暫時還沒有文章喵~</h3>
-        <p>看點別的？</p>
-        <a href="https://github.com/HosinoEJ"></a>
-    <%}%>
+    <section class="prot">
+        <% if (SavedTags.length > 0){%>
+            <% SavedTags.forEach(Prot =>{%>
+                <div class="div">
+                    <a href="/port/<%= Prot.filename %>">
+                        <h2><%= Prot.title %></h2>
+                        <p>作者：<%= Prot.author%></p>
+                        <p>創稿日期：<%= Prot.CreationDate%></p>
+                        <p>語言：<%= Prot.Language%></p>
+                        <p>
+                            <% if (Prot.tagid && Prot.tagid.length > 0) { %>
+                                <% Prot.tagid.forEach(id => { %>
+                                    <span class="tag-label">#<%= AllTags[id] %> </span>
+                                <% }) %>
+                            <% } else { %>
+                                #無標籤
+                            <% } %>
+                        </p>
+                    </a>
+
+                </div>
+            <%})%>
+        <%} else {%>
+            <h3>暫時還沒有文章喵~</h3>
+            <p>看點別的？</p>
+            <a href="https://github.com/HosinoEJ"></a>
+        <%}%>
+    </section>
 
     <%- include('partials/div') %>
     <%- include('partials/foot') %>
+    <%- include('partials/footer') %>
 </body>
 </html>

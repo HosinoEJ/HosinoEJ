@@ -1,36 +1,43 @@
 /*
-这个js是给跨性别群体的彩蛋，在每年“国际跨性别现身日”中触发。
-Index中的标题中的“GTEJR”五个字母会变成跨性别旗的五个颜色
+国际跨性别现身日 3月30日 标题彩色彩蛋
+强制锁定渲染，不会被其他代码覆盖
 */
-
-document.addEventListener("DOMContentLoaded", updateText);
-
-function updateText() {
-    const targetMonth = 3; // JavaScript 的月份从 0 开始，0 代表一月
-    const targetDay = 1;
-  
+function applyTransColor() {
+    const targetMonth = 2;
+    const targetDay = 31;
     const today = new Date();
-  
-    if (today.getMonth() === targetMonth && today.getDate() === targetDay) {
-      const coloredGTEJR = `
-        <t id="c-g">H</t>
-        <t id="c-t">S</t>
-        <t id="c-e">N</t>
-        <t id="c-t">E</t>
-        <t id="c-g">J</t>
-      `;
-      const originalText = document.getElementById("IndexTitle").textContent;
-      let newText = originalText;
-      const keywords = ["HosinoEJ", "星野栄治", "星野榮治" , "星野荣治"];
-      for (const keyword of keywords) {
-        if (originalText.includes(keyword)) {
-          newText = originalText.replace(keyword, coloredGTEJR);
-          break;
-        }
-      }
-      document.getElementById("IndexTitle").innerHTML = newText;
+
+    // 非节日直接不执行
+    if (today.getMonth() !== targetMonth || today.getDate() !== targetDay) return;
+
+    const title = document.getElementById("IndexTitle");
+    if (!title) return;
+
+    // 彩色 HTML（跨性别旗配色）
+    const coloredHtml = `
+        <span class="c-g">H</span>
+        <span class="c-g">o</span>
+        <span class="c-t">s</span>
+        <span class="c-t">i</span>
+        <span class="c-e">n</span>
+        <span class="c-e">o</span>
+        <span class="c-t">N</span>
+        <span class="c-t">e</span>
+        <span class="c-g">k</span>
+        <span class="c-g">o</span>
+    `;
+
+    // 强制替换，防止被覆盖
+    if (title.innerHTML.includes("HosinoNeko")) {
+        title.innerHTML = title.innerHTML.replace("HosinoNeko", coloredHtml);
     }
-  }
-  
-  updateText();
-  setInterval(updateText, 24 * 60 * 60 * 1000);
+}
+
+// 多种时机执行，确保稳定生效
+document.addEventListener("DOMContentLoaded", applyTransColor);
+window.addEventListener("load", applyTransColor);
+setTimeout(applyTransColor, 300);  // 延迟强制覆盖
+setTimeout(applyTransColor, 1000); // 最后兜底锁定
+
+// 每日检查
+setInterval(applyTransColor, 24 * 60 * 60 * 1000);

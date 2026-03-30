@@ -1,7 +1,8 @@
 html, body {
     margin: 0;
     padding: 0;
-    background-color: rgb(179, 179, 179);
+    background-color: white;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }
 
 
@@ -10,12 +11,30 @@ html, body {
     padding: 20px;
     border-radius: 16px;
     background-color: white;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 25px rgb(0 0 0 / 24%);
     margin: 20px;
     animation: fadeInUp 0.8s ease-out 0.4s both;
     overflow: hidden;
 }
+h1{
+    font-size: 3em;
+}
 
 button{
     
+}
+
+.prot{
+    width: 70%;
+    margin: 0 auto;
+}
+.tag{
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.tag > a{
+    margin: 0 20px;
 }

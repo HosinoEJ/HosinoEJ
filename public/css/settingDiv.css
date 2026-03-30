@@ -7,10 +7,3 @@
 
     width: 50%;
 }
-#settingBtn{
-    position: fixed;
-    z-index: 10000;
-    top: 90%;
-    left: 90%;
-    transform: translate(-50%, -50%);
-}

@@ -27,3 +27,7 @@ header .rtmod{
 header > :not(.icon,.rtmod){
     position:absolute
 }
+header page a{
+    margin: 0 20px;
+    color: white;
+}
