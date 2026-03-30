@@ -1,0 +1,29 @@
+header{
+    background-color: black;
+    padding: 1em 2em;
+    color: white;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header > * {
+    margin: 0 1em;
+}
+header img {
+    height: 1.5em;
+    width: auto;
+    vertical-align: middle;
+    border-radius: 50%;
+}
+header .icon {
+    margin-right: auto;
+    color: white;
+    text-decoration: none;
+}
+header .rtmod{
+    margin-left: auto;
+}
+header > :not(.icon,.rtmod){
+    position:absolute
+}
