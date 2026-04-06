@@ -2,11 +2,16 @@ name: Post File Changes to API
 
 on:
   push:
+    # 處理在哪一個分支下的分支
     branches:
       - main
     # 這個路徑下的檔案變動時，觸發 Workflow
     paths:
       - 'public/prot/**'
+
+env:
+  TARGET_DIR: "public/prot/"
+  WEBHOOK_URL: "https://Domain.com"
 
 jobs:
   notify:
@@ -17,13 +22,12 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Get changed files in public/prot
+      - name: Get changed files
         id: files
         run: |
-          # 這裡加上了路徑過濾 "public/prot/"
           # tr '\n' ',' 是將換行轉為逗號，方便 API 處理
-          ADDED=$(git diff --name-only --diff-filter=A ${{ github.event.before }} ${{ github.sha }} -- "public/prot/" | tr '\n' ',' | sed 's/,$//')
-          MODIFIED=$(git diff --name-only --diff-filter=M ${{ github.event.before }} ${{ github.sha }} -- "public/prot/" | tr '\n' ',' | sed 's/,$//')
+          ADDED=$(git diff --name-only --diff-filter=A ${{ github.event.before }} ${{ github.sha }} -- "$TARGET_DIR" | tr '\n' ',' | sed 's/,$//')
+          MODIFIED=$(git diff --name-only --diff-filter=M ${{ github.event.before }} ${{ github.sha }} -- "$TARGET_DIR" | tr '\n' ',' | sed 's/,$//')
           
           echo "added=$ADDED" >> $GITHUB_OUTPUT
           echo "modified=$MODIFIED" >> $GITHUB_OUTPUT
@@ -40,7 +44,9 @@ jobs:
             --arg modified "${{ steps.files.outputs.modified }}" \
             '{project: $project, commit_id: $commit, compare: $compare, added_files: $added, modified_files: $modified}')
 
-          curl -X POST "https://uninvestigating-aidan-unconjectural.ngrok-free.dev/api/webhook" \
+          curl -X POST "${{ env.WEBHOOK_URL }}" \
           -H "Content-Type: application/json" \
-          -H "X-Hosino-Token: ${{ secrets.MY_WEBHOOK_SECRET }}" \
+          -H "X-Hosino-Token: ${{ secrets.WEBHOOK_SECRET }}" \
           -d "$payload"
+
+# MY_WEBHOOK_SECRET 記得要在 GitHub Repo 的 Settings > Secrets and variables > Actions 裡面設定好。
